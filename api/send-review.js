@@ -30,13 +30,13 @@ export default async function handler(req, res) {
 
     // СОХРАНЯЕМ ОТЗЫВ В FIREBASE
     const reviewRef = await db.collection("reviews").add({
-      name,
-      title,
-      text,
-      rating,
-      approved: false,
-      createdAt: Date.now()
-    });
+  name,
+  title,
+  text,
+  rating: Number(rating),
+  approved: false,
+  timestamp: admin.firestore.FieldValue.serverTimestamp()
+});
 
     const reviewId = reviewRef.id;
 
