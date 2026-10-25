@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "2026-001-fasada",
+      "enabled": true,
+      "template": "facade",
+      "title": "Fasáda, ktorá drží teplo aj vzhľad",
+      "note": "Zateplenie a nová fasáda — nižšie účty za energie a svieži exteriér domu.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-002-rekonstrukcia",
+      "enabled": true,
+      "template": "reconstruction",
+      "title": "Rekonštrukcia bytu v Bratislave",
+      "note": "Kompletné práce od prípravy po odovzdanie. Čisto, v termíne, s dôrazom na detail.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-003-kupelna",
+      "enabled": true,
+      "template": "bathroom",
+      "title": "Nová kúpeľňa na mieru",
+      "note": "Obklady, dlažba a precízne detaily — kúpeľňa, ktorá vydrží roky.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-004-dom",
+      "enabled": true,
+      "template": "house",
+      "title": "Rodinný dom na kľúč",
+      "note": "Od základov po kolaudáciu. Transparentný rozpočet a fixné termíny.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-005-pred-po",
+      "enabled": true,
+      "template": "before_after",
+      "title": "Pred a po — rekonštrukcia interiéru",
+      "note": "Takto vyzerá premyslená obnova priestoru. Podobný výsledok vieme pripraviť aj u vás.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-006-strecha",
+      "enabled": true,
+      "template": "general",
+      "title": "Strecha a sadrokartón",
+      "note": "Komplexné strešné práce a sadrokartónové konštrukcie — spoľahlivo a odborne.",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    },
+    {
+      "id": "2026-007-custom",
+      "enabled": false,
+      "caption": "Vlastný text príspevku — ak vyplníte caption, šablóna sa nepoužije.\n\n📞 +421 950 405 659\n🌐 https://ukstav.sk",
+      "imageUrl": "REPLACE_WITH_PUBLIC_PHOTO_URL"
+    }
+  ]
+}
