@@ -1,56 +1,46 @@
-# UKSTAV Instagram autoposter (bezplatne)
+# UKSTAV Instagram autoposter (free)
 
-Každý deň zverejní 1 príspevok na Instagram UKSTAV cez oficiálne **Meta Graph API**.  
-Žiadny Buffer, Later ani iné platené nástroje.
+Daily Instagram posts for **UKSTAV SLOVAKIA** via official Meta Graph API.  
+No Buffer, Later, or other paid SMM tools.
 
-## Čo je hotové
-- fronta fotiek (`content/queue.json`)
-- slovenské texty + hashtagy (`src/captions.js`)
-- publikácia cez Instagram API (`src/post-once.js`)
-- denný cron zadarmo cez GitHub Actions
+## Start here (Ukrainian)
 
-## Čo treba od vás (raz)
+If Graph API Explorer shows only WhatsApp permissions / “nothing there” for Instagram — read:
 
-### 1) Meta token
-1. [developers.facebook.com](https://developers.facebook.com) → Create App (Business)
-2. Instagram účet musí byť **Business** a napojený na **Facebook Page**
-3. Graph API Explorer → token s právami:
-   - `instagram_basic`
-   - `instagram_content_publish`
-   - `pages_show_list`
-   - `pages_read_engagement`
-4. V priečinku `ukstav-instagram`:
+**[SETUP-UA.md](./SETUP-UA.md)**
 
-```bash
-cp .env.example .env
-# vlož USER/PAGE token do PAGE_ACCESS_TOKEN
-node src/whoami.js
-```
+That guide covers: add Instagram product to app `uk_stav`, link Facebook Page, new token, GitHub Secrets.
 
-Skript vypíše `IG_USER_ID`. Doplň ho do `.env`.
+## What is included
+- Photo queue: `content/queue.json`
+- Slovak captions: `src/captions.js`
+- Publish script: `src/post-once.js`
+- Token diagnostics: `npm run diagnose`
+- Readiness check: `npm run check-ready`
+- Free daily cron: `.github/workflows/ukstav-daily-instagram.yml`
 
-### 2) Fotky
-Do `content/queue.json` daj **verejné https URL** fotiek (Imgur, Google Drive priamy odkaz, Cloudinary free, vlastný hosting…).  
-Nahraď `REPLACE_WITH_PUBLIC_PHOTO_URL`.
-
-### 3) GitHub Secrets (pre denný auto-post)
-V repozitári → Settings → Secrets → Actions:
-- `IG_USER_ID`
-- `PAGE_ACCESS_TOKEN`
-
-Workflow: `.github/workflows/ukstav-daily-instagram.yml`  
-Štart: každý deň ~08:00 Bratislava, alebo ručne **Run workflow**.
-
-## Lokálne príkazy
+## Quick commands
 
 ```bash
 cd ukstav-instagram
-node src/preview-caption.js   # ukáž text ďalšieho postu
-node src/post-once.js --dry-run
-node src/post-once.js         # skutočne zverejní
+cp .env.example .env
+# paste token into PAGE_ACCESS_TOKEN=
+
+npm run diagnose      # permissions + Page + IG_USER_ID
+npm run whoami        # short IG id printout
+npm run check-ready   # .env + next photo URL
+npm run dry-run       # caption preview, no publish
+npm run post          # real Instagram publish
 ```
 
-## Formát položky vo fronte
+## GitHub Secrets
+Repository → Settings → Secrets and variables → Actions:
+- `PAGE_ACCESS_TOKEN`
+- `IG_USER_ID`
+
+Do not commit tokens. Workflow: **UKSTAV daily Instagram** (~08:00 Bratislava or Run workflow).
+
+## Queue item format
 
 ```json
 {
@@ -63,7 +53,7 @@ node src/post-once.js         # skutočne zverejní
 }
 ```
 
-Šablóny: `general`, `reconstruction`, `facade`, `bathroom`, `house`, `before_after`  
-Alebo vlastný text cez pole `caption`.
+Templates: `general`, `reconstruction`, `facade`, `bathroom`, `house`, `before_after`  
+Or set custom `caption`.
 
-Kontakt v textoch: **+421 950 405 659** · [ukstav.sk](https://ukstav.sk)
+Contact in captions: **+421 950 405 659** · [ukstav.sk](https://ukstav.sk)

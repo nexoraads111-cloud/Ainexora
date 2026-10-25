@@ -78,7 +78,21 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-/** Resolve Facebook Pages and linked Instagram business accounts for a token. */
+/** List granted OAuth permissions for this token. */
+export async function getPermissions(accessToken) {
+  const data = await graph("/me/permissions", { token: accessToken });
+  const rows = data.data || [];
+  return {
+    granted: rows.filter((p) => p.status === "granted").map((p) => p.permission),
+    declined: rows.filter((p) => p.status === "declined").map((p) => p.permission),
+    raw: rows,
+  };
+}
+
+/**
+ * Resolve Facebook Pages and linked Instagram business accounts for a token.
+ * Works with a User token (lists pages) or falls back for Page tokens via probePageToken.
+ */
 export async function discoverAccounts(accessToken) {
   const me = await graph("/me", { token: accessToken, fields: "id,name" });
   const pages = await graph("/me/accounts", {
@@ -103,4 +117,18 @@ export async function discoverAccounts(accessToken) {
   }
 
   return { user: me, pages: detailed };
+}
+
+/** When /me is already a Page (page access token). */
+export async function probePageToken(accessToken) {
+  const data = await graph("/me", {
+    token: accessToken,
+    fields: "id,name,instagram_business_account",
+  });
+  return {
+    pageId: data.id,
+    pageName: data.name,
+    pageAccessToken: accessToken,
+    igUserId: data.instagram_business_account?.id || null,
+  };
 }

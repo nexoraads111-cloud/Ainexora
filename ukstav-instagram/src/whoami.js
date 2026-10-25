@@ -1,15 +1,16 @@
-import { discoverAccounts } from "./instagram.js";
+/**
+ * Short helper: print IG_USER_ID for .env / GitHub Secrets.
+ * For full Ukrainian diagnostics use: npm run diagnose
+ */
 import "./config.js";
-
-const GRAPH = "https://graph.facebook.com/v21.0";
+import { discoverAccounts, probePageToken } from "./instagram.js";
 
 async function main() {
   const token = process.env.PAGE_ACCESS_TOKEN?.trim() || process.env.USER_ACCESS_TOKEN?.trim();
   if (!token) {
-    throw new Error("Set PAGE_ACCESS_TOKEN (or USER_ACCESS_TOKEN) in .env first");
+    throw new Error("Set PAGE_ACCESS_TOKEN (or USER_ACCESS_TOKEN) in .env first — see SETUP-UA.md");
   }
 
-  // Try user-token discovery first (lists all pages).
   try {
     const { user, pages } = await discoverAccounts(token);
     console.log(`Meta user: ${user.name || "?"} (${user.id})`);
@@ -23,37 +24,34 @@ async function main() {
       }
       const withIg = pages.find((p) => p.igUserId);
       if (withIg) {
-        console.log("Suggested .env:");
+        console.log("Suggested .env / GitHub Secrets:");
         console.log(`IG_USER_ID=${withIg.igUserId}`);
         console.log("PAGE_ACCESS_TOKEN=<page access token>");
+        return;
       }
-      return;
+      console.log("Pages found but Instagram is not linked. See SETUP-UA.md section 2.");
+      process.exit(1);
     }
   } catch {
     // Fall through — token may already be a Page token.
   }
 
-  // Page-token path: /me is the page.
-  const meUrl = new URL(`${GRAPH}/me`);
-  meUrl.searchParams.set("fields", "id,name,instagram_business_account");
-  meUrl.searchParams.set("access_token", token);
-  const res = await fetch(meUrl);
-  const data = await res.json();
-  if (data.error) throw new Error(data.error.message);
-
-  console.log(`Page: ${data.name} (${data.id})`);
-  const ig = data.instagram_business_account?.id;
-  console.log(`IG_USER_ID: ${ig || "— not linked —"}`);
-  if (ig) {
-    console.log("");
-    console.log("Suggested .env:");
-    console.log(`IG_USER_ID=${ig}`);
-    console.log("PAGE_ACCESS_TOKEN=<this page token>");
+  const page = await probePageToken(token);
+  console.log(`Page: ${page.pageName} (${page.pageId})`);
+  console.log(`IG_USER_ID: ${page.igUserId || "— not linked —"}`);
+  if (!page.igUserId) {
+    console.log("Instagram not linked to this Page. See SETUP-UA.md section 2.");
+    process.exit(1);
   }
+  console.log("");
+  console.log("Suggested .env / GitHub Secrets:");
+  console.log(`IG_USER_ID=${page.igUserId}`);
+  console.log("PAGE_ACCESS_TOKEN=<this page token>");
 }
 
 main().catch((err) => {
   console.error(err.message);
   if (err.details) console.error(JSON.stringify(err.details, null, 2));
+  console.error("Full check: npm run diagnose  |  Guide: SETUP-UA.md");
   process.exit(1);
 });
