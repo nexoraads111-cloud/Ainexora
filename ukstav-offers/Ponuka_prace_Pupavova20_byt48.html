@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cenová ponuka — Púpavová 20, byt 48 | UKSTAV SLOVAKIA</title>
+  <style>
+    @page { size: A4; margin: 14mm 14mm 16mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #1f2937;
+      font-size: 10.5pt;
+      line-height: 1.45;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 3px solid #ef4444;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .brand img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: 16pt;
+      color: #111827;
+      letter-spacing: 0.02em;
+    }
+    .brand p {
+      margin: 2px 0 0;
+      font-size: 9pt;
+      color: #6b7280;
+    }
+    .company-meta {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.4;
+    }
+    .company-meta strong { color: #111827; }
+    .doc-title {
+      margin: 8px 0 4px;
+      font-size: 14pt;
+      color: #111827;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      padding: 10px 12px;
+      margin: 10px 0 14px;
+      font-size: 9.5pt;
+    }
+    .meta-grid span { color: #6b7280; }
+    .note {
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      padding: 8px 12px;
+      margin: 0 0 14px;
+      font-size: 9.5pt;
+    }
+    .note strong { color: #92400e; }
+    h2 {
+      font-size: 11pt;
+      margin: 16px 0 8px;
+      color: #111827;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      margin-bottom: 8px;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 5px 6px;
+      vertical-align: top;
+    }
+    th {
+      background: #111827;
+      color: #fff;
+      font-weight: 600;
+      text-align: left;
+    }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    td.center, th.center { text-align: center; }
+    tr:nth-child(even) td { background: #f9fafb; }
+    .totals {
+      width: 55%;
+      margin-left: auto;
+      margin-top: 8px;
+    }
+    .totals td { font-size: 9.5pt; }
+    .totals .grand td {
+      background: #111827 !important;
+      color: #fff;
+      font-weight: 700;
+      font-size: 11pt;
+    }
+    .muted { color: #6b7280; font-size: 8.5pt; }
+    .footer {
+      margin-top: 22px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 8pt;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .sign {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      font-size: 9pt;
+    }
+    .sign .line {
+      margin-top: 36px;
+      border-top: 1px solid #9ca3af;
+      padding-top: 6px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="logo2.png" alt="UKSTAV" />
+      <div>
+        <h1>UKSTAV SLOVAKIA s. r. o.</h1>
+        <p>Stavebné práce a rekonštrukcie · ukstav.sk</p>
+      </div>
+    </div>
+    <div class="company-meta">
+      <strong>Obchodná 559/37</strong><br />
+      811 06 Bratislava – Staré Mesto<br />
+      IČO: 57 177 945 · DIČ: 21225899974<br />
+      +421 950 405 659<br />
+      ukstav.sk@gmail.com
+    </div>
+  </header>
+
+  <h1 class="doc-title">Orientačná cenová ponuka — práce + stavebný materiál</h1>
+  <p class="muted">Číslo: UKSTAV-2026-1027-P48 · Dátum: 27. 10. 2026 · Platnosť: 30 dní</p>
+
+  <div class="meta-grid">
+    <div><span>Objekt</span><br /><strong>Púpavová ul. 20, Bratislava · byt č. 48</strong></div>
+    <div><span>Poschodie / plocha</span><br /><strong>XII. poschodie · 62,12 m² (byt)</strong></div>
+    <div><span>Zákazník / dopyt</span><br /><strong>Filip Z. · kompletná rekonštrukcia</strong></div>
+    <div><span>Predpokladaný štart</span><br /><strong>január 2027 · trvanie cca 8–12 týždňov</strong></div>
+  </div>
+
+  <div class="note">
+    <strong>Dôležité:</strong> Táto ponuka zahŕňa iba remeselné práce a stavebný / inštalačný materiál
+    (elektro bez svietidiel, voda, nivelácia, stierky/maľba, práce v kúpeľni bez obkladu a sanitárie,
+    pokládka podlahy bez nášľapnej vrstvy, demontáž a odvoz).
+    <br /><br />
+    <strong>Kuchyňa, dvere, skrine, finálna podlaha, obklady, sanitária, lustre/svietidlá a klimatizácia
+    nie sú ocenené</strong> — cenu vieme dopočítať až po výbere konkrétneho materiálu / modelu zákazníkom.
+  </div>
+
+  <h2>1. Nacenený rozsah (práca + materiál)</h2>
+  <p class="muted">Sumy v EUR vrátane DPH 23 %.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="center" style="width:28px">№</th>
+        <th>Pozícia</th>
+        <th class="center" style="width:52px">J.</th>
+        <th class="num" style="width:52px">Množ.</th>
+        <th class="num" style="width:70px">Práce</th>
+        <th class="num" style="width:70px">Materiál</th>
+        <th class="num" style="width:78px">Spolu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center">1</td>
+        <td>Vypratanie + demontáž (stará kuchyňa, podlahy, obklady/dlažba, vstavané skrine; bez novej kuchyne/dverí)</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">2 100 €</td>
+        <td class="num">—</td>
+        <td class="num">2 100 €</td>
+      </tr>
+      <tr>
+        <td class="center">2</td>
+        <td>Vynášanie + odvoz + likvidácia stavebného odpadu (XII. p., malý výťah)</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">1 700 €</td>
+        <td class="num">—</td>
+        <td class="num">1 700 €</td>
+      </tr>
+      <tr>
+        <td class="center">3</td>
+        <td>Kompletná výmena elektroinštalácie (káble, rozvádzač, krabice, ističe, štandardné zásuvky/vypínače) — bez lustier a svietidiel</td>
+        <td class="center">byt</td>
+        <td class="num">1</td>
+        <td class="num">3 400 €</td>
+        <td class="num">2 000 €</td>
+        <td class="num">5 400 €</td>
+      </tr>
+      <tr>
+        <td class="center">4</td>
+        <td>Výmena rozvodov vody a kanalizácie + predĺženie ~5 m (kuchyňa, práčka → komora)</td>
+        <td class="center">byt</td>
+        <td class="num">1</td>
+        <td class="num">2 500 €</td>
+        <td class="num">1 000 €</td>
+        <td class="num">3 500 €</td>
+      </tr>
+      <tr>
+        <td class="center">5</td>
+        <td>Zamurovanie jedných dverí v priechodnej kúpeľni + omietka</td>
+        <td class="center">ks</td>
+        <td class="num">1</td>
+        <td class="num">350 €</td>
+        <td class="num">100 €</td>
+        <td class="num">450 €</td>
+      </tr>
+      <tr>
+        <td class="center">6</td>
+        <td>Kúpeľňa + WC — hydroizolácia, príprava, pokládka (práca), lepidlá/škárovanie; dokončenie montáže Geberit (práca). Bez obkladu/dlažby a sanitárie.</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">2 800 €</td>
+        <td class="num">450 €</td>
+        <td class="num">3 250 €</td>
+      </tr>
+      <tr>
+        <td class="center">7</td>
+        <td>Nivelizácia podláh — práca + nivelizačná hmota</td>
+        <td class="center">m²</td>
+        <td class="num">62,12</td>
+        <td class="num">900 €</td>
+        <td class="num">500 €</td>
+        <td class="num">1 400 €</td>
+      </tr>
+      <tr>
+        <td class="center">8</td>
+        <td>Pokládka plávajúcej podlahy stromček — iba práca + podložka/parozábrana (bez nášľapnej vrstvy)</td>
+        <td class="center">m²</td>
+        <td class="num">60</td>
+        <td class="num">1 800 €</td>
+        <td class="num">350 €</td>
+        <td class="num">2 150 €</td>
+      </tr>
+      <tr>
+        <td class="center">9</td>
+        <td>Príprava, stierkovanie a 2× maľovanie stien — práca + stierka, penetrácia, farba</td>
+        <td class="center">m²</td>
+        <td class="num">195</td>
+        <td class="num">3 100 €</td>
+        <td class="num">900 €</td>
+        <td class="num">4 000 €</td>
+      </tr>
+      <tr>
+        <td class="center">10</td>
+        <td>Vyrovnanie stien v kuchyni pod budúcu L-linku (bez dodávky kuchyne)</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">450 €</td>
+        <td class="num">100 €</td>
+        <td class="num">550 €</td>
+      </tr>
+      <tr>
+        <td class="center">11</td>
+        <td>Doprava stavebného / inštalačného materiálu</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">—</td>
+        <td class="num">280 €</td>
+        <td class="num">280 €</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="totals">
+    <tr>
+      <td>Práce spolu</td>
+      <td class="num">19 100 €</td>
+    </tr>
+    <tr>
+      <td>Stavebný / inštalačný materiál spolu</td>
+      <td class="num">5 680 €</td>
+    </tr>
+    <tr>
+      <td>Medzisúčet</td>
+      <td class="num">24 780 €</td>
+    </tr>
+    <tr>
+      <td>Rezerva 10 % (skryté práce / logistika XII. p.)</td>
+      <td class="num">2 478 €</td>
+    </tr>
+    <tr class="grand">
+      <td>SPOLU S DPH 23 %</td>
+      <td class="num">27 258 €</td>
+    </tr>
+  </table>
+
+  <h2>2. Položky po výbere materiálu zákazníkom — zatiaľ bez ceny</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="center" style="width:36px">№</th>
+        <th>Položka</th>
+        <th style="width:160px">Množstvo</th>
+        <th style="width:180px">Stav</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="center">F1</td>
+        <td>Nášľapná vrstva plávajúcej podlahy (stromček) + sokle</td>
+        <td>60 m² + rezerva</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F2</td>
+        <td>Obklad a dlažba kúpeľňa + WC</td>
+        <td>≈ 3,5 + ≈ 20 m²</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F3</td>
+        <td>Sanitárne vybavenie (umývadlo, vaňa/sprcha, batérie…)</td>
+        <td>1 komplet</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F4</td>
+        <td>Kuchyňa L 236 × 253 cm + montáž</td>
+        <td>≈ 4,89 bm</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F5</td>
+        <td>Vstavané spotrebiče kuchyne</td>
+        <td>set</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F6</td>
+        <td>7 interiérových dverí + montáž</td>
+        <td>7 ks</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F7</td>
+        <td>2 vstavané skrine (1,5 m + 3,5 m)</td>
+        <td>5 bm</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F8</td>
+        <td>Svietidlá, lustre, dizajnové body</td>
+        <td>byt</td>
+        <td>Cena po výbere</td>
+      </tr>
+      <tr>
+        <td class="center">F9</td>
+        <td>Klimatizačná jednotka</td>
+        <td>1 set</td>
+        <td>Cena po výbere</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Poznámky</h2>
+  <ul style="margin:0; padding-left:18px; font-size:9pt;">
+    <li>Liatinové radiátory podľa foto ponechávame — výmena nie je v cene.</li>
+    <li>Pivnica 1,79 m² a loggia nie sú v rozsahu.</li>
+    <li>Fixná cena po osobnej obhliadke a odsúhlasení výberu materiálov.</li>
+    <li>Orientačná ponuka; skryté poruchy po otvorení konštrukcií sa riešia dodatkom.</li>
+  </ul>
+
+  <div class="sign">
+    <div>
+      <strong>Za UKSTAV SLOVAKIA s. r. o.</strong>
+      <div class="line">podpis / pečiatka</div>
+    </div>
+    <div>
+      <strong>Zákazník</strong>
+      <div class="line">meno / podpis</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>
+      UKSTAV SLOVAKIA s. r. o. · Obchodná 559/37, 811 06 Bratislava<br />
+      IČO 57177945 · DIČ 21225899974 · ukstav.sk
+    </div>
+    <div style="text-align:right">
+      Anatolij Porokhnavets +421 950 405 659<br />
+      Mihajlo Kovač +421 951 827 835
+    </div>
+  </footer>
+</body>
+</html>

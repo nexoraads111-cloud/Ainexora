@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cenová ponuka — Púpavová 20, byt 48 | UKSTAV SLOVAKIA</title>
+  <style>
+    @page { size: A4; margin: 11mm 12mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #111827;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+
+    /* —— ŠAPKA —— */
+    .letterhead {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 4px solid #ef4444;
+      margin-bottom: 14px;
+    }
+    .letterhead img {
+      width: 72px; height: 72px; object-fit: contain;
+    }
+    .letterhead .name {
+      font-size: 18pt; font-weight: 800; letter-spacing: 0.04em; margin: 0; color: #111827;
+    }
+    .letterhead .tag {
+      margin: 2px 0 0; font-size: 9.5pt; color: #6b7280; font-weight: 500;
+    }
+    .letterhead .contacts {
+      text-align: right; font-size: 8.5pt; color: #374151; line-height: 1.45;
+    }
+    .letterhead .contacts strong { color: #111827; font-size: 9.5pt; }
+
+    .doc-label {
+      display: inline-block;
+      background: #ef4444; color: #fff;
+      font-size: 8pt; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 10px; margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0 0 4px; font-size: 16pt; font-weight: 800; line-height: 1.2;
+    }
+    .subhead { margin: 0 0 12px; color: #6b7280; font-size: 9pt; }
+
+    /* —— INFO BLOK —— */
+    .info {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 0;
+      border: 2px solid #111827;
+      margin-bottom: 14px;
+    }
+    .info .cell {
+      padding: 10px 12px;
+      border-right: 1px solid #e5e7eb;
+    }
+    .info .cell:last-child { border-right: none; background: #111827; color: #fff; }
+    .info .label {
+      font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #6b7280; font-weight: 700; margin-bottom: 3px;
+    }
+    .info .cell:last-child .label { color: #fca5a5; }
+    .info .value { font-size: 12pt; font-weight: 800; }
+    .info .cell:last-child .value { font-size: 16pt; color: #fff; }
+    .info .hint { font-size: 8pt; margin-top: 2px; opacity: 0.85; }
+
+    .lead {
+      background: #f9fafb; border-left: 4px solid #ef4444;
+      padding: 8px 12px; margin-bottom: 14px; font-size: 9.5pt;
+    }
+
+    /* —— TRIEDY —— */
+    .tier {
+      border: 2px solid #111827;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .tier-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 12px; background: #111827; color: #fff;
+    }
+    .tier.premium .tier-head { background: #ef4444; }
+    .tier-head h2 { margin: 0; font-size: 13pt; font-weight: 800; }
+    .tier-head .badge {
+      font-size: 8pt; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; opacity: 0.9;
+    }
+
+    .prices {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border-bottom: 2px solid #111827;
+    }
+    .price-box {
+      padding: 12px 14px;
+    }
+    .price-box + .price-box { border-left: 1px solid #e5e7eb; background: #f0fdf4; }
+    .price-box .kind {
+      font-size: 8pt; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.05em; color: #6b7280; margin-bottom: 4px;
+    }
+    .price-box .big {
+      font-size: 22pt; font-weight: 800; line-height: 1; color: #111827;
+    }
+    .price-box .per { font-size: 10pt; font-weight: 700; color: #374151; margin-top: 2px; }
+    .price-box .sum {
+      margin-top: 6px; font-size: 12pt; font-weight: 800;
+    }
+    .price-box .sum span { color: #6b7280; font-weight: 600; font-size: 9pt; display: block; }
+
+    .includes {
+      padding: 10px 12px 12px;
+    }
+    .includes h3 {
+      margin: 0 0 8px; font-size: 9pt; text-transform: uppercase;
+      letter-spacing: 0.05em; color: #6b7280;
+    }
+    .grid-inc {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px;
+    }
+    .inc-item {
+      display: grid; grid-template-columns: 18px 1fr; gap: 6px;
+      font-size: 9.5pt; align-items: start;
+    }
+    .inc-item .dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #111827; color: #fff; font-size: 9pt; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .tier.premium .inc-item .dot { background: #ef4444; }
+    .inc-item strong { display: block; font-size: 9.5pt; }
+    .inc-item span { display: block; color: #4b5563; font-size: 8.5pt; }
+
+    .extra {
+      margin-top: 8px; padding: 8px 10px; background: #fef2f2; border: 1px solid #fecaca;
+      font-size: 9pt;
+    }
+    .extra strong { color: #991b1b; }
+
+    .out {
+      margin-top: 10px; font-size: 8.5pt; color: #6b7280;
+      border-top: 1px solid #e5e7eb; padding-top: 8px;
+    }
+    .next {
+      margin-top: 12px; background: #111827; color: #fff;
+      padding: 10px 12px; font-size: 9.5pt;
+    }
+    .next strong { color: #fca5a5; }
+
+    .footer {
+      margin-top: 12px; padding-top: 8px; border-top: 1px solid #e5e7eb;
+      display: flex; justify-content: space-between; font-size: 7.5pt; color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ŠAPKA FIRMY -->
+  <header class="letterhead">
+    <img src="logo2.png" alt="UKSTAV" />
+    <div>
+      <p class="name">UKSTAV SLOVAKIA s. r. o.</p>
+      <p class="tag">Stavebné práce · rekonštrukcie bytov a domov · Bratislava</p>
+    </div>
+    <div class="contacts">
+      <strong>+421 950 405 659</strong><br />
+      ukstav.sk@gmail.com · www.ukstav.sk<br />
+      Obchodná 559/37, 811 06 Bratislava<br />
+      IČO 57 177 945 · DIČ 21225899974
+    </div>
+  </header>
+
+  <div class="doc-label">Predbežná cenová ponuka</div>
+  <h1>Kompletná rekonštrukcia bytu — cena za m² na kľúč</h1>
+  <p class="subhead">Č. UKSTAV-2026-1029-P48 · 29. 10. 2026 · platnosť 30 dní · podľa dopytu, pôdorysu a fotografií</p>
+
+  <!-- ZÁKAZKA + PLOCHA VEĽKÝMI -->
+  <div class="info">
+    <div class="cell">
+      <div class="label">Zákazka / objekt</div>
+      <div class="value">Púpavová 20, byt 48</div>
+      <div class="hint">Bratislava · panel 1969 · XII. poschodie · malý výťah</div>
+    </div>
+    <div class="cell">
+      <div class="label">Zákazník</div>
+      <div class="value">Filip Z.</div>
+      <div class="hint">Kompletná rekonštrukcia · štart I/2027</div>
+    </div>
+    <div class="cell">
+      <div class="label">Plocha bytu (podlahy)</div>
+      <div class="value">62,12 m²</div>
+      <div class="hint">Podľa pôdorysu · pivnica mimo výpočtu</div>
+    </div>
+  </div>
+
+  <div class="lead">
+    Nižšie sú <strong>2 triedy</strong>: <strong>stredná (štandard)</strong> a <strong>premium</strong>.
+    Pri každej vidíte jasne: <strong>iba práca</strong> a <strong>práca + materiál</strong> — cena za 1 m² podlahy a súčet za celý byt.
+    Detailný položkový rozpočet a fixná cena budú <strong>po osobnej obhliadke</strong>.
+  </div>
+
+  <!-- ========== ŠTANDARD ========== -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2>1. Stredná trieda · ŠTANDARD</h2>
+      <div class="badge">Odporúčané na štart</div>
+    </div>
+    <div class="prices">
+      <div class="price-box">
+        <div class="kind">Iba práca — bez materiálu</div>
+        <div class="big">390 €</div>
+        <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
+        <div class="sum">
+          <span>Súčet za byt 62,12 m²</span>
+          24 227 €
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="kind">Práca + materiál · na kľúč</div>
+        <div class="big">690 €</div>
+        <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
+        <div class="sum">
+          <span>Súčet za byt 62,12 m²</span>
+          42 863 €
+        </div>
+      </div>
+    </div>
+    <div class="includes">
+      <h3>Čo je v cene — komplety</h3>
+      <div class="grid-inc">
+        <div class="inc-item">
+          <div class="dot">1</div>
+          <div><strong>Steny + strop — komplet</strong><span>Príprava, stierkovanie, maľovanie (riadna príprava, nie náter cez staré)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">2</div>
+          <div><strong>Podlaha — komplet</strong><span>Nivelizácia + pokládka plávajúcej podlahy (stromček podľa dopytu)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">3</div>
+          <div><strong>Kúpeľňa — komplet</strong><span>Hydroizolácia, obklad/dlažba, sanita mid, zamurovanie dverí</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">4</div>
+          <div><strong>WC / toaleta — komplet</strong><span>Obklad, dokončenie Geberit, montáž sanitárie</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">5</div>
+          <div><strong>Elektro — komplet</strong><span>Nová elektroinštalácia bytu (zásuvky/vypínače štandard; bez dizajn lustier)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">6</div>
+          <div><strong>Voda / kanalizácia — komplet</strong><span>Nové rozvody + predĺženie ~5 m (kuchyňa, práčka → komora)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">7</div>
+          <div><strong>Dvere — komplet</strong><span>7 interiérových dverí + montáž (mid trieda pri variante s materiálom)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">8</div>
+          <div><strong>Kuchyňa L 236×253 — komplet</strong><span>Korpusy mid + montáž + základné spotrebiče mid (pri s materiálom)</span></div>
+        </div>
+      </div>
+      <p style="margin:10px 0 0; font-size:8.5pt; color:#4b5563;">
+        Spoločné pre oba varianty: demontáž, odvoz sutiny (XII. poschodie), doprava materiálu.
+        Pri „iba práca“ si zákazník kupuje finálne materiály sám; my dodáme remeselnú prácu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== PREMIUM ========== -->
+  <section class="tier premium">
+    <div class="tier-head">
+      <h2>2. PREMIUM trieda</h2>
+      <div class="badge">Vyšší štandard materiálov a detailov</div>
+    </div>
+    <div class="prices">
+      <div class="price-box">
+        <div class="kind">Iba práca — bez materiálu</div>
+        <div class="big">510 €</div>
+        <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
+        <div class="sum">
+          <span>Súčet za byt 62,12 m²</span>
+          31 681 €
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="kind">Práca + materiál · na kľúč</div>
+        <div class="big">990 €</div>
+        <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
+        <div class="sum">
+          <span>Súčet za byt 62,12 m²</span>
+          61 499 €
+        </div>
+      </div>
+    </div>
+    <div class="includes">
+      <h3>Čo je v cene — komplety (všetko zo štandardu + nižšie)</h3>
+      <div class="grid-inc">
+        <div class="inc-item">
+          <div class="dot">1</div>
+          <div><strong>Steny + strop — komplet premium</strong><span>Vyrovnanie stien, stierky hladký finál, kvalitnejšia maľba / farby</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">2</div>
+          <div><strong>Podlaha — komplet premium</strong><span>Nivelizácia + vyššia trieda podlahy, precízny stromček</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">3</div>
+          <div><strong>Kúpeľňa + WC — komplet premium</strong><span>Lepší obklad/dlažba, vyššia sanita a batérie</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">4</div>
+          <div><strong>Elektro — komplet + revízie</strong><span>Nová elektroinštalácia + revízne správy / protokoly podľa predpisov</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">5</div>
+          <div><strong>Voda — komplet</strong><span>Nové rozvody + ~5 m + kvalitnejšie armatúry</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">6</div>
+          <div><strong>Dvere + skrine</strong><span>7 dverí vyššia trieda + 2 vstavané skrine 1,5 m a 3,5 m</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">7</div>
+          <div><strong>Kuchyňa L — premium</strong><span>Lepšie korpusy/kovanie, silnejší set spotrebičov</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">8</div>
+          <div><strong>Klíma — príprava</strong><span>Predpríprava trasy (bez vonkajšej/vnútorné jednotky)</span></div>
+        </div>
+      </div>
+      <div class="extra">
+        <strong>Premium navyše oproti štandardu:</strong>
+        vyrovnanie / precíznejšie stierkovanie stien, vyššia trieda povrchov, elektro s revíznymi správami,
+        vstavané skrine, príprava na klímu, väčší priestor na detaily pri XII. poschodí.
+      </div>
+    </div>
+  </section>
+
+  <div class="out">
+    <strong>V cene nie je:</strong> výmena okien a vchodových dverí bytu · výmena radiátorov (liatina podľa foto OK) ·
+    klimatizačná jednotka · dizajnové lustre · loggia · pivnica · skryté poruchy po otvorení konštrukcií.
+  </div>
+
+  <div class="next">
+    <strong>Ďalší krok:</strong> vyberte triedu (štandard / premium) a variant (iba práca / s materiálom) →
+    prídeme na obhliadku → pripravíme <strong>konečný plný opis prác a fixnú cenu</strong>.
+    Táto ponuka je predbežná podľa dopytu a fotografií.
+  </div>
+
+  <footer class="footer">
+    <div>UKSTAV SLOVAKIA s. r. o. · Obchodná 559/37, 811 06 Bratislava · IČO 57177945 · DIČ 21225899974</div>
+    <div>Anatolij Porokhnavets +421 950 405 659 · Mihajlo Kovač +421 951 827 835</div>
+  </footer>
+
+</body>
+</html>
