@@ -2,125 +2,338 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <title>Перша пропозиція €/м² — Púpavová 20 | UKSTAV</title>
+  <title>Кошторис — Púpavová 20, кв. 48 | UKSTAV SLOVAKIA</title>
   <style>
-    @page { size: A4; margin: 13mm; }
+    @page { size: A4; margin: 11mm 12mm; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: "Segoe UI", Helvetica, Arial, sans-serif; color: #1f2937; font-size: 10pt; line-height: 1.4; }
-    .header { display: flex; justify-content: space-between; gap: 14px; border-bottom: 3px solid #ef4444; padding-bottom: 10px; margin-bottom: 12px; }
-    .brand { display: flex; gap: 10px; align-items: center; }
-    .brand img { width: 58px; height: 58px; object-fit: contain; }
-    .brand h1 { margin: 0; font-size: 14pt; }
-    .brand p { margin: 2px 0 0; font-size: 8.5pt; color: #6b7280; }
-    .company-meta { text-align: right; font-size: 8pt; color: #374151; }
-    h1.doc { font-size: 13pt; margin: 4px 0 2px; }
-    .muted { color: #6b7280; font-size: 8pt; }
-    .note { border-left: 4px solid #f59e0b; background: #fffbeb; padding: 7px 10px; margin: 8px 0 12px; font-size: 9pt; }
-    table.main { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 8px 0 12px; }
-    table.main th, table.main td { border: 1px solid #e5e7eb; padding: 7px 8px; vertical-align: top; }
-    table.main th { background: #111827; color: #fff; text-align: left; }
-    table.main td.num { text-align: right; white-space: nowrap; font-weight: 600; }
-    table.main tr.hl td { background: #f0fdf4; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .box { border: 1px solid #e5e7eb; border-radius: 5px; padding: 8px 10px; font-size: 8.5pt; }
-    .box h3 { margin: 0 0 6px; font-size: 10pt; }
-    .box.prem h3 { color: #ef4444; }
-    .box ul { margin: 0; padding-left: 15px; }
-    .ok { background: #f0fdf4; border: 1px solid #86efac; padding: 7px 10px; font-size: 9pt; margin-top: 10px; }
-    .footer { margin-top: 14px; padding-top: 7px; border-top: 1px solid #e5e7eb; font-size: 7.5pt; color: #6b7280; display: flex; justify-content: space-between; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #111827;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+    .letterhead {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 4px solid #ef4444;
+      margin-bottom: 14px;
+    }
+    .letterhead img { width: 72px; height: 72px; object-fit: contain; }
+    .letterhead .name {
+      font-size: 18pt; font-weight: 800; letter-spacing: 0.04em; margin: 0; color: #111827;
+    }
+    .letterhead .tag { margin: 2px 0 0; font-size: 9.5pt; color: #6b7280; font-weight: 500; }
+    .letterhead .contacts { text-align: right; font-size: 8.5pt; color: #374151; line-height: 1.45; }
+    .letterhead .contacts strong { color: #111827; font-size: 9.5pt; }
+
+    .doc-label {
+      display: inline-block;
+      background: #ef4444; color: #fff;
+      font-size: 8pt; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 10px; margin-bottom: 8px;
+    }
+    h1 { margin: 0 0 4px; font-size: 16pt; font-weight: 800; line-height: 1.2; }
+    .subhead { margin: 0 0 12px; color: #6b7280; font-size: 9pt; }
+
+    .info {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 0;
+      border: 2px solid #111827;
+      margin-bottom: 14px;
+    }
+    .info .cell { padding: 10px 12px; border-right: 1px solid #e5e7eb; }
+    .info .cell:last-child { border-right: none; background: #111827; color: #fff; }
+    .info .label {
+      font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.06em;
+      color: #6b7280; font-weight: 700; margin-bottom: 3px;
+    }
+    .info .cell:last-child .label { color: #fca5a5; }
+    .info .value { font-size: 12pt; font-weight: 800; }
+    .info .cell:last-child .value { font-size: 16pt; color: #fff; }
+    .info .hint { font-size: 8pt; margin-top: 2px; opacity: 0.85; }
+
+    .lead {
+      background: #f9fafb; border-left: 4px solid #ef4444;
+      padding: 8px 12px; margin-bottom: 14px; font-size: 9.5pt;
+    }
+
+    .tier {
+      border: 2px solid #111827;
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .tier-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 12px; background: #111827; color: #fff;
+    }
+    .tier.premium .tier-head { background: #ef4444; }
+    .tier-head h2 { margin: 0; font-size: 13pt; font-weight: 800; }
+    .tier-head .badge {
+      font-size: 8pt; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; opacity: 0.9;
+    }
+
+    .prices {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      border-bottom: 2px solid #111827;
+    }
+    .price-box { padding: 12px 14px; }
+    .price-box + .price-box { border-left: 1px solid #e5e7eb; background: #f0fdf4; }
+    .price-box .kind {
+      font-size: 8pt; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.05em; color: #6b7280; margin-bottom: 4px;
+    }
+    .price-box .big {
+      font-size: 22pt; font-weight: 800; line-height: 1; color: #111827;
+    }
+    .price-box .per { font-size: 10pt; font-weight: 700; color: #374151; margin-top: 2px; }
+    .price-box .sum { margin-top: 6px; font-size: 12pt; font-weight: 800; }
+    .price-box .sum span { color: #6b7280; font-weight: 600; font-size: 9pt; display: block; }
+
+    .includes { padding: 10px 12px 12px; }
+    .includes h3 {
+      margin: 0 0 8px; font-size: 9pt; text-transform: uppercase;
+      letter-spacing: 0.05em; color: #6b7280;
+    }
+    .grid-inc { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+    .inc-item {
+      display: grid; grid-template-columns: 18px 1fr; gap: 6px;
+      font-size: 9.5pt; align-items: start;
+    }
+    .inc-item .dot {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: #111827; color: #fff; font-size: 9pt; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; margin-top: 1px;
+    }
+    .tier.premium .inc-item .dot { background: #ef4444; }
+    .inc-item strong { display: block; font-size: 9.5pt; }
+    .inc-item span { display: block; color: #4b5563; font-size: 8.5pt; }
+
+    .extra {
+      margin-top: 8px; padding: 8px 10px; background: #fef2f2; border: 1px solid #fecaca;
+      font-size: 9pt;
+    }
+    .extra strong { color: #991b1b; }
+
+    .out {
+      margin-top: 10px; font-size: 8.5pt; color: #6b7280;
+      border-top: 1px solid #e5e7eb; padding-top: 8px;
+    }
+    .next {
+      margin-top: 12px; background: #111827; color: #fff;
+      padding: 10px 12px; font-size: 9.5pt;
+    }
+    .next strong { color: #fca5a5; }
+
+    .footer {
+      margin-top: 12px; padding-top: 8px; border-top: 1px solid #e5e7eb;
+      display: flex; justify-content: space-between; font-size: 7.5pt; color: #6b7280;
+    }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="brand">
-      <img src="logo2.png" alt="UKSTAV" />
-      <div>
-        <h1>UKSTAV SLOVAKIA s. r. o.</h1>
-        <p>Внутрішня версія для перевірки · знижена, щоб взяти замовлення</p>
-      </div>
+
+  <header class="letterhead">
+    <img src="logo2.png" alt="UKSTAV" />
+    <div>
+      <p class="name">UKSTAV SLOVAKIA s. r. o.</p>
+      <p class="tag">Будівельні роботи · реконструкції квартир і будинків · Братислава</p>
     </div>
-    <div class="company-meta">
-      Púpavová 20 · кв. 48 · 62,12 м²<br />
-      29.10.2026
+    <div class="contacts">
+      <strong>+421 950 405 659</strong><br />
+      ukstav.sk@gmail.com · www.ukstav.sk<br />
+      Obchodná 559/37, 811 06 Bratislava<br />
+      IČO 57 177 945 · DIČ 21225899974
     </div>
   </header>
 
-  <h1 class="doc">Перша пропозиція: стандарт / premium × без матеріалу / з матеріалом</h1>
-  <p class="muted">Старий 900 €/м² за стандарт був зависокий для виграшу замовлення → стандарт з матеріалом тепер <strong>690 €/м²</strong>.</p>
+  <div class="doc-label">Попередня цінова пропозиція</div>
+  <h1>Повна реконструкція квартири — ціна за м² під ключ</h1>
+  <p class="subhead">№ UKSTAV-2026-1029-P48 · 29.10.2026 · чинність 30 днів · за заявкою, планом і фото</p>
 
-  <div class="note">
-    Остаточний повний опис робіт і фікс — <strong>після огляду</strong>. Це перша орієнтація з фото + плану.
-  </div>
-
-  <table class="main">
-    <thead>
-      <tr>
-        <th>Клас</th>
-        <th>Варіант</th>
-        <th>€ / м² (з ПДВ)</th>
-        <th>Сума при 62,12 м²</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan="2"><strong>Стандарт</strong></td>
-        <td>Лише робота — без матеріалу</td>
-        <td class="num">390 € / м²</td>
-        <td class="num">24 227 €</td>
-      </tr>
-      <tr class="hl">
-        <td><strong>Робота + матеріал</strong> ← щоб забрати замовлення</td>
-        <td class="num"><strong>690 € / м²</strong></td>
-        <td class="num"><strong>42 863 €</strong></td>
-      </tr>
-      <tr>
-        <td rowspan="2"><strong>Premium</strong></td>
-        <td>Лише робота — без матеріалу</td>
-        <td class="num">510 € / м²</td>
-        <td class="num">31 681 €</td>
-      </tr>
-      <tr>
-        <td><strong>Робота + матеріал</strong></td>
-        <td class="num"><strong>990 € / м²</strong></td>
-        <td class="num"><strong>61 499 €</strong></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p class="muted">
-    Без матеріалу = замовник купує фініші сам. З матеріалом = ми ставимо mid/premium матеріали в ціні.
-  </p>
-
-  <div class="cols">
-    <div class="box">
-      <h3>Стандарт — що входить</h3>
-      <ul>
-        <li>Демонтаж + вивіз (12 пов.)</li>
-        <li>Електро + вода/каналізація (+~5 м)</li>
-        <li>Нівелювання, підлога «ялинка» (робота / + mid матеріал)</li>
-        <li>Шпаклівка + фарба</li>
-        <li>Ванна+WC, замурування дверей</li>
-        <li>Кухня Г + 7 дверей (робота / + mid)</li>
-      </ul>
+  <div class="info">
+    <div class="cell">
+      <div class="label">Замовлення / об’єкт</div>
+      <div class="value">Púpavová 20, кв. 48</div>
+      <div class="hint">Братислава · панель 1969 · XII поверх · малий ліфт</div>
     </div>
-    <div class="box prem">
-      <h3>Premium — що більше</h3>
-      <ul>
-        <li>Кращі матеріали / виконання</li>
-        <li>Краща кухня, двері, сантехніка</li>
-        <li>2 шафи 1,5 + 3,5 м</li>
-        <li>Траса під кондиціонер (без блоку)</li>
-      </ul>
+    <div class="cell">
+      <div class="label">Замовник</div>
+      <div class="value">Filip Z.</div>
+      <div class="hint">Повна реконструкція · старт I/2027</div>
+    </div>
+    <div class="cell">
+      <div class="label">Площа квартири (підлога)</div>
+      <div class="value">62,12 м²</div>
+      <div class="hint">За планом · підвал поза розрахунком</div>
     </div>
   </div>
 
-  <div class="ok">
-    <strong>Для клієнта рекомендуємо:</strong> Стандарт · робота + матеріал · <strong>690 €/м² ≈ 42 900 €</strong>.
+  <div class="lead">
+    Нижче <strong>2 класи</strong>: <strong>середній (стандарт)</strong> і <strong>premium</strong>.
+    У кожному чітко: <strong>лише робота</strong> і <strong>робота + матеріал</strong> — ціна за 1 м² підлоги та сума за всю квартиру.
+    Детальний постатейний кошторис і фікс будуть <strong>після особистого огляду</strong>.
+  </div>
+
+  <!-- СТАНДАРТ -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2>1. Середній клас · СТАНДАРТ</h2>
+      <div class="badge">Рекомендуємо для старту</div>
+    </div>
+    <div class="prices">
+      <div class="price-box">
+        <div class="kind">Лише робота — без матеріалу</div>
+        <div class="big">390 €</div>
+        <div class="per">за 1 м² підлоги (з ПДВ 23 %)</div>
+        <div class="sum">
+          <span>Сума за квартиру 62,12 м²</span>
+          24 227 €
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="kind">Робота + матеріал · під ключ</div>
+        <div class="big">690 €</div>
+        <div class="per">за 1 м² підлоги (з ПДВ 23 %)</div>
+        <div class="sum">
+          <span>Сума за квартиру 62,12 м²</span>
+          42 863 €
+        </div>
+      </div>
+    </div>
+    <div class="includes">
+      <h3>Що входить у ціну — комплекти</h3>
+      <div class="grid-inc">
+        <div class="inc-item">
+          <div class="dot">1</div>
+          <div><strong>Стіни + стеля — комплект</strong><span>Підготовка, шпаклівка, фарбування (нормальна підготовка, не фарба поверх старого)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">2</div>
+          <div><strong>Підлога — комплект</strong><span>Нівелювання + укладання плаваючої підлоги («ялинка» за заявкою)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">3</div>
+          <div><strong>Ванна — комплект</strong><span>Гідроізоляція, плитка, сантехніка mid, замурування дверей</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">4</div>
+          <div><strong>Туалет / WC — комплект</strong><span>Плитка, завершення Geberit, монтаж сантехніки</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">5</div>
+          <div><strong>Електрика — комплект</strong><span>Нова електропроводка квартири (розетки/вимикачі стандарт; без дизайнерських люстр)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">6</div>
+          <div><strong>Вода / каналізація — комплект</strong><span>Нові розводки + подовження ~5 м (кухня, пралка → комора)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">7</div>
+          <div><strong>Двері — комплект</strong><span>7 міжкімнатних дверей + монтаж (mid клас у варіанті з матеріалом)</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">8</div>
+          <div><strong>Кухня Г 236×253 — комплект</strong><span>Корпуси mid + монтаж + базова техніка mid (у варіанті з матеріалом)</span></div>
+        </div>
+      </div>
+      <p style="margin:10px 0 0; font-size:8.5pt; color:#4b5563;">
+        Спільне для обох варіантів: демонтаж, вивіз сміття (XII поверх), доставка матеріалу.
+        При «лише робота» фінішні матеріали купує замовник; ми виконуємо роботу.
+      </p>
+    </div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="tier premium">
+    <div class="tier-head">
+      <h2>2. PREMIUM клас</h2>
+      <div class="badge">Вищий стандарт матеріалів і деталей</div>
+    </div>
+    <div class="prices">
+      <div class="price-box">
+        <div class="kind">Лише робота — без матеріалу</div>
+        <div class="big">510 €</div>
+        <div class="per">за 1 м² підлоги (з ПДВ 23 %)</div>
+        <div class="sum">
+          <span>Сума за квартиру 62,12 м²</span>
+          31 681 €
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="kind">Робота + матеріал · під ключ</div>
+        <div class="big">990 €</div>
+        <div class="per">за 1 м² підлоги (з ПДВ 23 %)</div>
+        <div class="sum">
+          <span>Сума за квартиру 62,12 м²</span>
+          61 499 €
+        </div>
+      </div>
+    </div>
+    <div class="includes">
+      <h3>Що входить у ціну — комплекти (усе зі стандарту + нижче)</h3>
+      <div class="grid-inc">
+        <div class="inc-item">
+          <div class="dot">1</div>
+          <div><strong>Стіни + стеля — комплект premium</strong><span>Вирівнювання стін, шпаклівка гладкий фініш, якісніша фарба / кольори</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">2</div>
+          <div><strong>Підлога — комплект premium</strong><span>Нівелювання + вищий клас підлоги, точна «ялинка»</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">3</div>
+          <div><strong>Ванна + WC — комплект premium</strong><span>Краща плитка, вища сантехніка та змішувачі</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">4</div>
+          <div><strong>Електрика — комплект + ревізії</strong><span>Нова проводка + ревізійні протоколи / звіти за нормами</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">5</div>
+          <div><strong>Вода — комплект</strong><span>Нові розводки + ~5 м + якісніша арматура</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">6</div>
+          <div><strong>Двері + шафи</strong><span>7 дверей вищого класу + 2 вбудовані шафи 1,5 м і 3,5 м</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">7</div>
+          <div><strong>Кухня Г — premium</strong><span>Кращі корпуси/фурнітура, сильніший набір техніки</span></div>
+        </div>
+        <div class="inc-item">
+          <div class="dot">8</div>
+          <div><strong>Кондиціонер — підготовка</strong><span>Підготовка траси (без зовнішнього/внутрішнього блоку)</span></div>
+        </div>
+      </div>
+      <div class="extra">
+        <strong>Premium додатково до стандарту:</strong>
+        вирівнювання / точніша шпаклівка стін, вищий клас покриттів, електрика з ревізійними документами,
+        вбудовані шафи, підготовка під кондиціонер, більший запас на деталі на XII поверсі.
+      </div>
+    </div>
+  </section>
+
+  <div class="out">
+    <strong>Не входить у ціну:</strong> заміна вікон і вхідних дверей квартири · заміна радіаторів (чавун за фото OK) ·
+    блок кондиціонера · дизайнерські люстри · лоджія · підвал · приховані дефекти після розкриття конструкцій.
+  </div>
+
+  <div class="next">
+    <strong>Наступний крок:</strong> оберіть клас (стандарт / premium) і варіант (лише робота / з матеріалом) →
+    приїдемо на огляд → підготуємо <strong>остаточний повний опис робіт і фіксовану ціну</strong>.
+    Ця пропозиція попередня — за заявкою та фото.
   </div>
 
   <footer class="footer">
-    <div>UKSTAV SLOVAKIA s. r. o.</div>
-    <div>+421 950 405 659</div>
+    <div>UKSTAV SLOVAKIA s. r. o. · Obchodná 559/37, 811 06 Bratislava · IČO 57177945 · DIČ 21225899974</div>
+    <div>Anatolij Porokhnavets +421 950 405 659 · Mihajlo Kovač +421 951 827 835</div>
   </footer>
+
 </body>
 </html>
