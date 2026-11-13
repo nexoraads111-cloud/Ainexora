@@ -2,140 +2,44 @@
 <html lang="sk">
 <head>
   <meta charset="UTF-8" />
-  <title>Cenová ponuka — Rekonštrukcia NP 48 m² Bratislava | UKSTAV SLOVAKIA</title>
+  <title>Cenová ponuka — NP 48 m² Bratislava · po obhliadke | UKSTAV</title>
   <style>
-    @page { size: A4; margin: 11mm 12mm 12mm 12mm; }
+    @page { size: A4; margin: 11mm 12mm; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
-      color: #1f2937;
-      font-size: 9.5pt;
-      line-height: 1.35;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      border-bottom: 3px solid #ef4444;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-    }
+    body { margin: 0; font-family: "Segoe UI", Helvetica, Arial, sans-serif; color: #1f2937; font-size: 9.5pt; line-height: 1.35; }
+    .header { display: flex; justify-content: space-between; gap: 16px; border-bottom: 3px solid #ef4444; padding-bottom: 10px; margin-bottom: 10px; }
     .brand { display: flex; gap: 12px; align-items: center; }
-    .brand img { width: 58px; height: 58px; object-fit: contain; }
-    .brand h1 { margin: 0; font-size: 14pt; color: #111827; letter-spacing: 0.02em; }
+    .brand img { width: 56px; height: 56px; object-fit: contain; }
+    .brand h1 { margin: 0; font-size: 14pt; }
     .brand p { margin: 2px 0 0; font-size: 8.5pt; color: #6b7280; }
-    .company-meta { text-align: right; font-size: 8pt; color: #374151; line-height: 1.35; }
-    .company-meta strong { color: #111827; }
-    .doc-label {
-      display: inline-block;
-      background: #ef4444; color: #fff;
-      font-size: 7.5pt; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 3px 9px; margin-bottom: 6px;
-    }
-    .doc-title { margin: 2px 0; font-size: 13pt; color: #111827; font-weight: 800; }
+    .company-meta { text-align: right; font-size: 8pt; color: #374151; }
+    .doc-label { display: inline-block; background: #ef4444; color: #fff; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; margin-bottom: 6px; }
+    .doc-title { margin: 2px 0; font-size: 13pt; font-weight: 800; color: #111827; }
     .muted { color: #6b7280; font-size: 8pt; }
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px 20px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      padding: 8px 10px;
-      margin: 8px 0 10px;
-      font-size: 9pt;
-    }
+    .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; background: #f9fafb; border: 1px solid #e5e7eb; padding: 8px 10px; margin: 8px 0 10px; font-size: 9pt; }
     .meta-grid span { color: #6b7280; }
-    .note {
-      border-left: 4px solid #f59e0b;
-      background: #fffbeb;
-      padding: 7px 10px;
-      margin: 0 0 10px;
-      font-size: 8.5pt;
-    }
-    .note strong { color: #92400e; }
-    .note.info {
-      border-left-color: #2563eb;
-      background: #eff6ff;
-    }
-    .note.info strong { color: #1e40af; }
-    .prices {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 2px solid #111827;
-      margin-bottom: 10px;
-    }
+    .note { border-left: 4px solid #2563eb; background: #eff6ff; padding: 7px 10px; margin: 0 0 10px; font-size: 8.5pt; }
+    .note strong { color: #1e40af; }
+    .prices { display: grid; grid-template-columns: 1fr 1fr; border: 2px solid #111827; margin-bottom: 10px; }
     .price-box { padding: 10px 12px; }
     .price-box + .price-box { border-left: 1px solid #e5e7eb; background: #f0fdf4; }
-    .price-box .kind {
-      font-size: 7.5pt; font-weight: 800; text-transform: uppercase;
-      letter-spacing: 0.05em; color: #6b7280; margin-bottom: 3px;
-    }
-    .price-box .big { font-size: 18pt; font-weight: 800; line-height: 1; color: #111827; }
-    .price-box .per { font-size: 9pt; font-weight: 700; color: #374151; margin-top: 2px; }
-    .price-box .sum { margin-top: 5px; font-size: 10.5pt; font-weight: 800; }
-    .price-box .sum span { color: #6b7280; font-weight: 600; font-size: 8pt; display: block; }
-    h2 {
-      font-size: 10.5pt;
-      margin: 10px 0 5px;
-      color: #111827;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 3px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 8pt;
-      margin-bottom: 6px;
-    }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 3px 5px;
-      vertical-align: top;
-    }
-    th {
-      background: #111827;
-      color: #fff;
-      font-weight: 600;
-      text-align: left;
-    }
+    .price-box .kind { font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; }
+    .price-box .big { font-size: 18pt; font-weight: 800; line-height: 1.1; margin-top: 2px; }
+    .price-box .per { font-size: 9pt; font-weight: 700; color: #374151; }
+    .price-box .sum span { display: block; color: #6b7280; font-size: 8pt; font-weight: 600; }
+    h2 { font-size: 10.5pt; margin: 10px 0 5px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; }
+    table { width: 100%; border-collapse: collapse; font-size: 7.8pt; margin-bottom: 6px; }
+    th, td { border: 1px solid #e5e7eb; padding: 3px 4px; vertical-align: top; }
+    th { background: #111827; color: #fff; text-align: left; }
     td.num, th.num { text-align: right; white-space: nowrap; }
     td.center, th.center { text-align: center; }
     tr:nth-child(even) td { background: #f9fafb; }
-    .totals { width: 58%; margin-left: auto; margin-top: 4px; }
-    .totals .grand td {
-      background: #111827 !important;
-      color: #fff;
-      font-weight: 700;
-      font-size: 10pt;
-    }
-    .footer {
-      margin-top: 12px;
-      padding-top: 6px;
-      border-top: 1px solid #e5e7eb;
-      font-size: 7pt;
-      color: #6b7280;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .sign {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 36px;
-      font-size: 8.5pt;
-    }
-    .sign .line {
-      margin-top: 26px;
-      border-top: 1px solid #9ca3af;
-      padding-top: 5px;
-      color: #6b7280;
-    }
+    .totals { width: 58%; margin-left: auto; }
+    .totals .grand td { background: #111827 !important; color: #fff; font-weight: 700; font-size: 10pt; }
     ul.compact { margin: 3px 0 6px 16px; padding: 0; font-size: 8.5pt; }
-    ul.compact li { margin: 1px 0; }
+    .sign { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; font-size: 8.5pt; }
+    .sign .line { margin-top: 26px; border-top: 1px solid #9ca3af; padding-top: 5px; color: #6b7280; }
+    .footer { margin-top: 10px; padding-top: 6px; border-top: 1px solid #e5e7eb; font-size: 7pt; color: #6b7280; display: flex; justify-content: space-between; }
   </style>
 </head>
 <body>
@@ -156,317 +60,94 @@
     </div>
   </header>
 
-  <div class="doc-label">Orientačná cenová ponuka · R3 po fotografiách izieb</div>
-  <div class="doc-title">Rekonštrukcia nebytového priestoru — 48 m², Bratislava</div>
-  <p class="muted">Číslo: UKSTAV-2026-1112-NP48-R3 · Dátum: 13. 11. 2026 · Platnosť: 30 dní · pôdorys + fotky kuchyne + 2 izieb</p>
+  <div class="doc-label">Oficiálna cenová ponuka · práca + materiál + DPH</div>
+  <div class="doc-title">Rekonštrukcia nebytového / suterénneho priestoru — 48 m², Bratislava</div>
+  <p class="muted">Číslo: UKSTAV-2026-1113-NP48-OBH · Dátum: 13. 11. 2026 · Platnosť: 30 dní · podľa obhliadky a dohody so zákazníkom</p>
 
   <div class="meta-grid">
-    <div><span>Objekt</span><br /><strong>Nebytový priestor · bytový dom · Bratislava</strong></div>
-    <div><span>Plocha / termín</span><br /><strong>48 m² · požadovaný termín do 1 mesiaca</strong></div>
-    <div><span>Izba 1 (pri exteriéri)</span><br /><strong>Stredný stav · čiastočne rozpracovaná</strong></div>
-    <div><span>Izba 2</span><br /><strong>Stredný stav · nábytok / dlažba / lokálne omietky</strong></div>
+    <div><span>Objekt</span><br /><strong>Nebytový priestor v bytovom dome (suterén) · Bratislava</strong></div>
+    <div><span>Plocha</span><br /><strong>48 m²</strong></div>
+    <div><span>Rozsah</span><br /><strong>Kompletná rekonštrukcia podľa zoznamu nižšie</strong></div>
+    <div><span>Cena</span><br /><strong>Práca + materiál · s DPH 23 % (platca DPH)</strong></div>
   </div>
 
-  <div class="note info">
-    <strong>Aktualizácia R3 podľa fotiek izieb:</strong>
-    Izby sú v <strong>strednom stave</strong> (výrazne lepšie ako kuchyňa/WC/sprcha).
-    Izba pri vchode: čiastočne vyprataná, červené krytie podlahy, voľné káble, radiátor demontovaný, okná/vchod na výmenu alebo úpravu.
-    Druhá izba: dlažba, skrine/matrace na vypratanie, lokálne poškodenie omietky pri podlahe, staré svietidlá.
-    Hĺbková sanácia ostáva viazaná hlavne na mokrý trakt. Do ceny doplnené vypratanie 2. izby a spätná montáž radiátorov.
+  <div class="note">
+    <strong>Podľa obhliadky:</strong> plastové exteriérové vchodové dvere + železná brána; drevené okná — reštaurovanie (nie výmena);
+    interiérové krídla nové (rámy ostanú); demontáž konvektorov; plyn + kotol + 3 radiátory; kompletná voda a elektro;
+    WC nové; sprcha → komora; steny komplet cyklus; SDK stropy s podsvietením; dlažba 60×60 + sokle.
   </div>
 
   <div class="prices">
     <div class="price-box">
-      <div class="kind">Iba práca</div>
-      <div class="big">378 €</div>
-      <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
-      <div class="sum">
-        <span>Súčet za 48 m²</span>
-        18 149 €
-      </div>
+      <div class="kind">Spolu bez DPH</div>
+      <div class="big">37 289 €</div>
+      <div class="per">práca 21 157 € · materiál 16 132 €</div>
     </div>
     <div class="price-box">
-      <div class="kind">Práca + materiál · stredná trieda</div>
-      <div class="big">633 €</div>
-      <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
-      <div class="sum">
-        <span>Súčet za 48 m²</span>
-        30 399 €
-      </div>
+      <div class="kind">Spolu s DPH 23 %</div>
+      <div class="big">45 865 €</div>
+      <div class="per">956 € / m² podlahy</div>
+      <div class="sum"><span>Odporúčaná rezerva +10 %</span>50 452 €</div>
     </div>
   </div>
 
-  <h2>1. Stav podľa fotografií</h2>
+  <h2>1. Položkový rozpočet (bez DPH)</h2>
   <table>
     <thead>
       <tr>
-        <th>Zóna</th>
-        <th>Stav</th>
-        <th>Dopad</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Kuchyňa + WC + sprcha</td>
-        <td>Ťažký (omietky, vlhkosť, obklady, voľné káble)</td>
-        <td>Hĺbková sanácia + nový mokrý trakt</td>
-      </tr>
-      <tr>
-        <td>Izba 1 (vchod / exteriér)</td>
-        <td>Stredný · rozpracovaná</td>
-        <td>Štandardný cyklus stien, podlaha, vchod/okná, radiátory</td>
-      </tr>
-      <tr>
-        <td>Izba 2</td>
-        <td>Stredný · obývaná / zariadená</td>
-        <td>Vypratanie, demontáž dlažby, lokálne omietky + maľba</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>2. Položkový rozpočet (práca + materiál, bez DPH)</h2>
-  <table>
-    <thead>
-      <tr>
-        <th class="center" style="width:24px">№</th>
+        <th class="center" style="width:22px">№</th>
         <th>Pozícia</th>
-        <th class="center" style="width:44px">J.</th>
-        <th class="num" style="width:44px">Množ.</th>
+        <th class="center" style="width:42px">J.</th>
+        <th class="num" style="width:40px">Množ.</th>
         <th class="num" style="width:58px">Práce</th>
         <th class="num" style="width:58px">Materiál</th>
         <th class="num" style="width:64px">Spolu</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="center">1</td>
-        <td>Vypratanie kuchyne / odvoz starého inventára</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">500 €</td>
-        <td class="num">—</td>
-        <td class="num">500 €</td>
-      </tr>
-      <tr>
-        <td class="center">2</td>
-        <td>Vypratanie 2. izby (skrine, matrace, drobný inventár)</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">400 €</td>
-        <td class="num">—</td>
-        <td class="num">400 €</td>
-      </tr>
-      <tr>
-        <td class="center">3</td>
-        <td>Sanácia plesne + hĺbkové odstránenie omietky (mokrý trakt)</td>
-        <td class="center">m²</td>
-        <td class="num">55</td>
-        <td class="num">770 €</td>
-        <td class="num">440 €</td>
-        <td class="num">1 210 €</td>
-      </tr>
-      <tr>
-        <td class="center">4</td>
-        <td>Demontáž starých obkladov (WC, sprcha, umývadlo)</td>
-        <td class="center">m²</td>
-        <td class="num">15</td>
-        <td class="num">210 €</td>
-        <td class="num">—</td>
-        <td class="num">210 €</td>
-      </tr>
-      <tr>
-        <td class="center">5</td>
-        <td>Steny — kompletný cyklus (penetrácia, sieťka, stierky, 2× maľba)</td>
-        <td class="center">m²</td>
-        <td class="num">144</td>
-        <td class="num">3 802 €</td>
-        <td class="num">1 159 €</td>
-        <td class="num">4 961 €</td>
-      </tr>
-      <tr>
-        <td class="center">6</td>
-        <td>Stropy — kompletný cyklus</td>
-        <td class="center">m²</td>
-        <td class="num">48</td>
-        <td class="num">1 495 €</td>
-        <td class="num">386 €</td>
-        <td class="num">1 881 €</td>
-      </tr>
-      <tr>
-        <td class="center">7</td>
-        <td>Rohové a APU lišty</td>
-        <td class="center">bm</td>
-        <td class="num">47</td>
-        <td class="num">226 €</td>
-        <td class="num">183 €</td>
-        <td class="num">409 €</td>
-      </tr>
-      <tr>
-        <td class="center">8</td>
-        <td>Demontáž starej podlahovej krytiny / dlažby</td>
-        <td class="center">m²</td>
-        <td class="num">48</td>
-        <td class="num">768 €</td>
-        <td class="num">—</td>
-        <td class="num">768 €</td>
-      </tr>
-      <tr>
-        <td class="center">9</td>
-        <td>Nivelácia / príprava podkladu</td>
-        <td class="center">m²</td>
-        <td class="num">48</td>
-        <td class="num">720 €</td>
-        <td class="num">528 €</td>
-        <td class="num">1 248 €</td>
-      </tr>
-      <tr>
-        <td class="center">10</td>
-        <td>Pokládka vinyl / plávajúca podlaha (stredná trieda)</td>
-        <td class="center">m²</td>
-        <td class="num">48</td>
-        <td class="num">1 440 €</td>
-        <td class="num">1 344 €</td>
-        <td class="num">2 784 €</td>
-      </tr>
-      <tr>
-        <td class="center">11</td>
-        <td>Soklové lišty</td>
-        <td class="center">bm</td>
-        <td class="num">55</td>
-        <td class="num">302 €</td>
-        <td class="num">248 €</td>
-        <td class="num">550 €</td>
-      </tr>
-      <tr>
-        <td class="center">12</td>
-        <td>Výmena okien PVC mid (2 izbové + 1 malé) + montáž</td>
-        <td class="center">ks</td>
-        <td class="num">3</td>
-        <td class="num">450 €</td>
-        <td class="num">1 200 €</td>
-        <td class="num">1 650 €</td>
-      </tr>
-      <tr>
-        <td class="center">13</td>
-        <td>Špalety po výmene okien</td>
-        <td class="center">bm</td>
-        <td class="num">12</td>
-        <td class="num">216 €</td>
-        <td class="num">72 €</td>
-        <td class="num">288 €</td>
-      </tr>
-      <tr>
-        <td class="center">14</td>
-        <td>Interiérové dvere mid + osadenie</td>
-        <td class="center">ks</td>
-        <td class="num">5</td>
-        <td class="num">400 €</td>
-        <td class="num">900 €</td>
-        <td class="num">1 300 €</td>
-      </tr>
-      <tr>
-        <td class="center">15</td>
-        <td>Vchodové dvojkrídlové / sklenené dvere + osadenie</td>
-        <td class="center">ks</td>
-        <td class="num">1</td>
-        <td class="num">280 €</td>
-        <td class="num">950 €</td>
-        <td class="num">1 230 €</td>
-      </tr>
-      <tr>
-        <td class="center">16</td>
-        <td>WC + sprcha — hydroizolácia a nový obklad (ťažký stav)</td>
-        <td class="center">m²</td>
-        <td class="num">18</td>
-        <td class="num">756 €</td>
-        <td class="num">900 €</td>
-        <td class="num">1 656 €</td>
-      </tr>
-      <tr>
-        <td class="center">17</td>
-        <td>Demontáž / montáž sanitár + výmena umývadla mid</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">380 €</td>
-        <td class="num">220 €</td>
-        <td class="num">600 €</td>
-      </tr>
-      <tr>
-        <td class="center">18</td>
-        <td>Spätná montáž radiátorov (izba 1)</td>
-        <td class="center">ks</td>
-        <td class="num">2</td>
-        <td class="num">240 €</td>
-        <td class="num">80 €</td>
-        <td class="num">320 €</td>
-      </tr>
-      <tr>
-        <td class="center">19</td>
-        <td>Orientačné bezpečné elektro / rozvod kuchyňa (provizórne)</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">800 €</td>
-        <td class="num">400 €</td>
-        <td class="num">1 200 €</td>
-      </tr>
-      <tr>
-        <td class="center">20</td>
-        <td>Ochrana spoločných priestorov + upratovanie</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">320 €</td>
-        <td class="num">100 €</td>
-        <td class="num">420 €</td>
-      </tr>
-      <tr>
-        <td class="center">21</td>
-        <td>Kontajner + odvoz sutiny</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">—</td>
-        <td class="num">850 €</td>
-        <td class="num">850 €</td>
-      </tr>
-      <tr>
-        <td class="center">22</td>
-        <td>Zariadenie staveniska / náradie</td>
-        <td class="center">komp.</td>
-        <td class="num">1</td>
-        <td class="num">280 €</td>
-        <td class="num">—</td>
-        <td class="num">280 €</td>
-      </tr>
+      <tr><td class="center">1</td><td>Vypratanie / príprava priestoru</td><td class="center">komp.</td><td class="num">1</td><td class="num">500 €</td><td class="num">—</td><td class="num">500 €</td></tr>
+      <tr><td class="center">2</td><td>Demontáž starej dlažby</td><td class="center">m²</td><td class="num">48</td><td class="num">768 €</td><td class="num">—</td><td class="num">768 €</td></tr>
+      <tr><td class="center">3</td><td>Nivelácia / príprava podkladu pod 60×60</td><td class="center">m²</td><td class="num">48</td><td class="num">720 €</td><td class="num">528 €</td><td class="num">1 248 €</td></tr>
+      <tr><td class="center">4</td><td>Nová dlažba 60×60 mid + lepidlo</td><td class="center">m²</td><td class="num">48</td><td class="num">2 016 €</td><td class="num">1 680 €</td><td class="num">3 696 €</td></tr>
+      <tr><td class="center">5</td><td>Soklové lišty po celom priestore</td><td class="center">bm</td><td class="num">55</td><td class="num">302 €</td><td class="num">248 €</td><td class="num">550 €</td></tr>
+      <tr><td class="center">6</td><td>Odstránenie starej farby / príprava stien</td><td class="center">m²</td><td class="num">144</td><td class="num">504 €</td><td class="num">29 €</td><td class="num">533 €</td></tr>
+      <tr><td class="center">7</td><td>Steny komplet: penetrácia, sieťka+lepidlo, stierky 2×, brúsenie, farba 2×</td><td class="center">m²</td><td class="num">144</td><td class="num">3 298 €</td><td class="num">1 130 €</td><td class="num">4 428 €</td></tr>
+      <tr><td class="center">8</td><td>SDK stropy po celom priestore</td><td class="center">m²</td><td class="num">48</td><td class="num">1 824 €</td><td class="num">1 152 €</td><td class="num">2 976 €</td></tr>
+      <tr><td class="center">9</td><td>LED podsvietenie / lišty strop</td><td class="center">bm</td><td class="num">45</td><td class="num">2 025 €</td><td class="num">1 125 €</td><td class="num">3 150 €</td></tr>
+      <tr><td class="center">10</td><td>Svietidlá mid (montáž + materiál)</td><td class="center">ks</td><td class="num">8</td><td class="num">200 €</td><td class="num">360 €</td><td class="num">560 €</td></tr>
+      <tr><td class="center">11</td><td>Reštaurovanie drevených okien (očistenie, brúsenie, náter)</td><td class="center">ks</td><td class="num">4</td><td class="num">720 €</td><td class="num">240 €</td><td class="num">960 €</td></tr>
+      <tr><td class="center">12</td><td>Výmena vchodových dverí plast (exteriér) + montáž</td><td class="center">ks</td><td class="num">2</td><td class="num">440 €</td><td class="num">1 300 €</td><td class="num">1 740 €</td></tr>
+      <tr><td class="center">13</td><td>Železná brána + montáž</td><td class="center">ks</td><td class="num">1</td><td class="num">350 €</td><td class="num">900 €</td><td class="num">1 250 €</td></tr>
+      <tr><td class="center">14</td><td>Výmena interiérových dverných krídel (rámy ostanú)</td><td class="center">ks</td><td class="num">5</td><td class="num">450 €</td><td class="num">800 €</td><td class="num">1 250 €</td></tr>
+      <tr><td class="center">15</td><td>Demontáž konvektorov</td><td class="center">ks</td><td class="num">3</td><td class="num">120 €</td><td class="num">—</td><td class="num">120 €</td></tr>
+      <tr><td class="center">16</td><td>Prívod plynového potrubia + pripojenie</td><td class="center">komp.</td><td class="num">1</td><td class="num">450 €</td><td class="num">280 €</td><td class="num">730 €</td></tr>
+      <tr><td class="center">17</td><td>Plynový kotol mid + montáž</td><td class="center">ks</td><td class="num">1</td><td class="num">280 €</td><td class="num">950 €</td><td class="num">1 230 €</td></tr>
+      <tr><td class="center">18</td><td>Radiátory mid + montáž</td><td class="center">ks</td><td class="num">3</td><td class="num">360 €</td><td class="num">540 €</td><td class="num">900 €</td></tr>
+      <tr><td class="center">19</td><td>Kompletná výmena vody (rozvody)</td><td class="center">komp.</td><td class="num">1</td><td class="num">1 800 €</td><td class="num">1 200 €</td><td class="num">3 000 €</td></tr>
+      <tr><td class="center">20</td><td>Kompletná výmena elektroinštalácie</td><td class="center">komp.</td><td class="num">1</td><td class="num">2 200 €</td><td class="num">1 400 €</td><td class="num">3 600 €</td></tr>
+      <tr><td class="center">21</td><td>WC — kompletná rekonštrukcia (obklad, WC, umývadlo mid)</td><td class="center">komp.</td><td class="num">1</td><td class="num">650 €</td><td class="num">780 €</td><td class="num">1 430 €</td></tr>
+      <tr><td class="center">22</td><td>Demontáž sprchy + úprava na komoru (police/zásuvky)</td><td class="center">komp.</td><td class="num">1</td><td class="num">380 €</td><td class="num">420 €</td><td class="num">800 €</td></tr>
+      <tr><td class="center">23</td><td>Ochrana spoločných priestorov + upratovanie (bytový dom / suterén)</td><td class="center">komp.</td><td class="num">1</td><td class="num">450 €</td><td class="num">120 €</td><td class="num">570 €</td></tr>
+      <tr><td class="center">24</td><td>Kontajner + odvoz sutiny</td><td class="center">komp.</td><td class="num">1</td><td class="num">—</td><td class="num">950 €</td><td class="num">950 €</td></tr>
+      <tr><td class="center">25</td><td>Zariadenie staveniska</td><td class="center">komp.</td><td class="num">1</td><td class="num">350 €</td><td class="num">—</td><td class="num">350 €</td></tr>
     </tbody>
   </table>
 
   <table class="totals">
-    <tr>
-      <td>Práce bez DPH</td>
-      <td class="num">14 755 €</td>
-    </tr>
-    <tr>
-      <td>Materiál bez DPH</td>
-      <td class="num">9 960 €</td>
-    </tr>
-    <tr>
-      <td>Spolu bez DPH</td>
-      <td class="num">24 715 €</td>
-    </tr>
-    <tr>
-      <td>DPH 23 %</td>
-      <td class="num">5 684 €</td>
-    </tr>
-    <tr class="grand">
-      <td>Spolu s DPH 23 %</td>
-      <td class="num">30 399 €</td>
-    </tr>
+    <tr><td>Práce bez DPH</td><td class="num">21 157 €</td></tr>
+    <tr><td>Materiál bez DPH</td><td class="num">16 132 €</td></tr>
+    <tr><td>Spolu bez DPH</td><td class="num">37 289 €</td></tr>
+    <tr><td>DPH 23 %</td><td class="num">8 576 €</td></tr>
+    <tr class="grand"><td>Spolu s DPH 23 %</td><td class="num">45 865 €</td></tr>
   </table>
 
-  <h2>3. Čo je / nie je v cene</h2>
+  <h2>2. Poznámky</h2>
   <ul class="compact">
-    <li><strong>V cene:</strong> vypratanie kuchyne + 2. izby, hĺbková sanácia mokrého traktu, steny+stropy, podlaha mid, okná/dvere/vchod, ťažší WC/sprcha, umývadlo mid, radiátory, orientačné bezpečné elektro kuchyne, odvoz.</li>
-    <li><strong>Nie je v cene:</strong> kompletná nová elektroinštalácia celého NP + nové svietidlá, nové rozvody vody/kúrenia, kuchynská linka, projekt, búracie práce priečok.</li>
-    <li><strong>Odporúčaná rezerva +10 %</strong> (obhliadka / skrytá vlhkosť): <strong>33 439 € s DPH</strong>.</li>
+    <li>Cena je <strong>práca + materiál + DPH 23 %</strong> (UKSTAV je platca DPH).</li>
+    <li>Finálne typy dverí / kotla / radiátorov / dlažby / svietidiel sa odsúhlasia pred nákupom.</li>
+    <li>Okná sa <strong>reštauujú</strong>, nevymieňajú.</li>
+    <li>Interiérové <strong>rámy ostávajú</strong>, menia sa krídla.</li>
+    <li>Ponuka je orientačná podľa obhliadky; po výbere konkrétnych materiálov vieme vystaviť fixnú zmluvnú cenu.</li>
   </ul>
 
   <div class="sign">
@@ -484,7 +165,7 @@
   </div>
 
   <div class="footer">
-    <div>UKSTAV-2026-1112-NP48-R3 · po fotkách izieb · platnosť 30 dní</div>
+    <div>UKSTAV-2026-1113-NP48-OBH · po obhliadke · platnosť 30 dní</div>
     <div>Strana 1</div>
   </div>
 </body>
