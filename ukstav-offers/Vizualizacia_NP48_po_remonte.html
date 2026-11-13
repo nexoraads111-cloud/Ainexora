@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vizualizácia po rekonštrukcii — NP 48 m² | UKSTAV</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #111827;
+      background: #fff;
+      font-size: 10.5pt;
+      line-height: 1.4;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 18px 16px 28px; }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 3px solid #ef4444;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .brand img { width: 56px; height: 56px; object-fit: contain; }
+    .brand h1 { margin: 0; font-size: 15pt; }
+    .brand p { margin: 2px 0 0; color: #6b7280; font-size: 9pt; }
+    .company-meta { text-align: right; font-size: 8.5pt; color: #374151; }
+    .doc-label {
+      display: inline-block;
+      background: #ef4444; color: #fff;
+      font-size: 8pt; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 10px; margin-bottom: 8px;
+    }
+    h2.doc { margin: 0 0 4px; font-size: 16pt; }
+    .sub { margin: 0 0 12px; color: #6b7280; font-size: 9pt; }
+    .note {
+      border-left: 4px solid #f59e0b;
+      background: #fffbeb;
+      padding: 8px 12px;
+      margin: 0 0 18px;
+      font-size: 9.5pt;
+    }
+    .note strong { color: #92400e; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    figure {
+      margin: 0;
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      page-break-inside: avoid;
+    }
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #ddd;
+    }
+    figcaption {
+      padding: 10px 12px;
+      font-size: 9.5pt;
+    }
+    figcaption strong { display: block; font-size: 11pt; margin-bottom: 2px; }
+    figcaption span { color: #6b7280; }
+    .footer {
+      margin-top: 18px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 8pt;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="brand">
+        <img src="logo.png" alt="UKSTAV" />
+        <div>
+          <h1>UKSTAV SLOVAKIA s. r. o.</h1>
+          <p>Stavebné práce a rekonštrukcie · ukstav.sk</p>
+        </div>
+      </div>
+      <div class="company-meta">
+        <strong>+421 950 405 659</strong><br />
+        ukstav.sk@gmail.com<br />
+        Obchodná 559/37, Bratislava<br />
+        IČO 57 177 945
+      </div>
+    </header>
+
+    <div class="doc-label">Orientačná vizualizácia</div>
+    <h2 class="doc">Ako môže priestor vyzerať po rekonštrukcii</h2>
+    <p class="sub">Nebytový priestor 48 m² · Bratislava · podľa pôdorysu a fotografií · 13. 11. 2026</p>
+
+    <div class="note">
+      <strong>Dôležité:</strong> Ide o <strong>orientačné AI vizualizácie</strong> strednej triedy (vinylová podlaha, biele steny, nové okná/dvere, nový mokrý trakt, kompaktná kuchynská linka).
+      Finálny vzhľad závisí od výberu materiálov po obhliadke. Kuchynská linka na vizualizácii je návrh — v položkovom rozpočte R3 linka nie je nacenená (iba umývadlo mid).
+    </div>
+
+    <div class="grid">
+      <figure>
+        <img src="vizualizacie/viz-izba1-po-remonte.jpg" alt="Izba 1 po rekonštrukcii" />
+        <figcaption>
+          <strong>1. Izba pri vchode — po rekonštrukcii</strong>
+          <span>Svetlá vinylová podlaha, hladké steny, nové okná, čisté stropy so svetlami.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="vizualizacie/viz-vchod-izba1-po-remonte.jpg" alt="Pohľad na vchod po rekonštrukcii" />
+        <figcaption>
+          <strong>2. Pohľad na vchod / exteriér — po rekonštrukcii</strong>
+          <span>Nové sklenené vchodové dvere, radiátor, rovnaká svetlá podlaha cez celú izbu.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="vizualizacie/viz-izba2-po-remonte.jpg" alt="Izba 2 po rekonštrukcii" />
+        <figcaption>
+          <strong>3. Druhá izba — po rekonštrukcii</strong>
+          <span>Bez starého nábytku, nová podlaha a dvere, čisté steny, moderné osvetlenie.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="vizualizacie/viz-kuchyna-po-remonte.jpg" alt="Kuchyňa po rekonštrukcii" />
+        <figcaption>
+          <strong>4. Kuchyňa — návrh po rekonštrukcii</strong>
+          <span>Sanácia omietok, kompaktná linka (návrh), nové umývadlo, čisté elektro. Linka = vizuálny návrh.</span>
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="vizualizacie/viz-mokry-trakt-po-remonte.jpg" alt="WC a sprcha po rekonštrukcii" />
+        <figcaption>
+          <strong>5. WC + sprcha — po rekonštrukcii</strong>
+          <span>Nová hydroizolácia, obklad, sprchový kút a hygienický mokrý trakt namiesto improvizácie.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="footer">
+      <div>UKSTAV · vizualizácia k ponuke UKSTAV-2026-1112-NP48-R3</div>
+      <div>www.ukstav.sk</div>
+    </div>
+  </div>
+</body>
+</html>
