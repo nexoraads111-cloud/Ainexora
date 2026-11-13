@@ -1,0 +1,18 @@
+{
+  "name": "ukstav-instagram-autoposter",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Free daily Instagram poster for UKSTAV SLOVAKIA (Meta Graph API, no paid tools)",
+  "scripts": {
+    "post": "node src/post-once.js",
+    "dry-run": "node src/post-once.js --dry-run",
+    "caption": "node src/preview-caption.js",
+    "whoami": "node src/whoami.js",
+    "diagnose": "node src/diagnose.js",
+    "check-ready": "node src/check-ready.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

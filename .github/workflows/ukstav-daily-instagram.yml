@@ -1,0 +1,65 @@
+# Free daily Instagram publish for UKSTAV (no Buffer/Later).
+# Setup guide: ukstav-instagram/SETUP-UA.md
+# Requires repo Secrets:
+#   IG_USER_ID
+#   PAGE_ACCESS_TOKEN
+# Diagnose locally: cd ukstav-instagram && npm run diagnose
+#
+# Photos: put public https image URLs into ukstav-instagram/content/queue.json
+
+name: UKSTAV daily Instagram
+
+on:
+  schedule:
+    # 08:00 Europe/Bratislava ≈ 07:00 UTC (winter) — adjust if needed
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Preflight secrets + queue
+        working-directory: ukstav-instagram
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$IG_USER_ID" ] || [ -z "$PAGE_ACCESS_TOKEN" ]; then
+            echo "Missing GitHub Secrets IG_USER_ID and/or PAGE_ACCESS_TOKEN."
+            echo "Follow ukstav-instagram/SETUP-UA.md then add Secrets under Settings → Actions."
+            exit 1
+          fi
+          node src/check-ready.js
+          node src/diagnose.js
+
+      - name: Publish next queued post
+        working-directory: ukstav-instagram
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: node src/post-once.js
+
+      - name: Save queue progress
+        working-directory: ukstav-instagram
+        run: |
+          if git diff --quiet -- content/posted.json; then
+            echo "No posted.json changes"
+            exit 0
+          fi
+          git config user.name "ukstav-autoposter"
+          git config user.email "ukstav-autoposter@users.noreply.github.com"
+          git add content/posted.json
+          git commit -m "chore(ukstav): mark Instagram post as published"
+          git push
