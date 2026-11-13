@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <title>Cenová ponuka UKSTAV — projekt 160909</title>
+  <style>
+    @page { size: A4; margin: 12mm 11mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: #1a1a1a;
+      font-size: 10pt;
+      line-height: 1.35;
+      margin: 0;
+    }
+    .letterhead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #b91c1c;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .brand-name {
+      font-size: 15pt;
+      font-weight: 700;
+      margin: 0;
+    }
+    .brand-tag {
+      font-size: 8.5pt;
+      color: #555;
+      margin-top: 2px;
+    }
+    .contacts {
+      text-align: right;
+      font-size: 8pt;
+      color: #333;
+      line-height: 1.45;
+    }
+    .badge {
+      display: inline-block;
+      background: #b91c1c;
+      color: #fff;
+      font-size: 8pt;
+      font-weight: 600;
+      padding: 3px 9px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    h1 {
+      font-size: 14pt;
+      margin: 0 0 3px;
+      font-weight: 700;
+    }
+    .sub {
+      color: #555;
+      font-size: 9pt;
+      margin-bottom: 10px;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 16px;
+      background: #f6f6f6;
+      border: 1px solid #e5e5e5;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      font-size: 9pt;
+    }
+    .meta div span {
+      display: block;
+      color: #666;
+      font-size: 7.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 1px;
+    }
+    .m2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .m2-box {
+      border: 1.5px solid #ddd;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .m2-box.rec {
+      border-color: #b91c1c;
+      background: #fffafa;
+    }
+    .m2-box .label {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .m2-box .price {
+      font-size: 22pt;
+      font-weight: 750;
+      line-height: 1.1;
+      margin: 0;
+    }
+    .m2-box .unit {
+      font-size: 10pt;
+      color: #444;
+      margin-top: 2px;
+    }
+    .m2-box .total {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #e0e0e0;
+      font-size: 9pt;
+      color: #333;
+    }
+    .m2-box .total strong { font-size: 11pt; }
+    .rec-tag {
+      display: inline-block;
+      background: #b91c1c;
+      color: #fff;
+      font-size: 7pt;
+      padding: 2px 6px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 10.5pt;
+      margin: 0 0 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-bottom: 10px;
+    }
+    th {
+      background: #1f1f1f;
+      color: #fff;
+      font-weight: 600;
+      padding: 5px 4px;
+      text-align: left;
+    }
+    th.num, td.num { text-align: right; }
+    th.ctr, td.ctr { text-align: center; }
+    td {
+      padding: 4px;
+      border-bottom: 1px solid #e8e8e8;
+      vertical-align: top;
+    }
+    tr:nth-child(even) td { background: #fafafa; }
+    tr.total td {
+      background: #f0f0f0;
+      font-weight: 700;
+      border-top: 1.5px solid #333;
+      border-bottom: none;
+    }
+    .rekap {
+      width: 58%;
+      margin-left: auto;
+      margin-bottom: 10px;
+      font-size: 9pt;
+    }
+    .rekap table td { border: none; background: transparent !important; padding: 2px 0; }
+    .rekap .big td {
+      font-size: 11pt;
+      font-weight: 700;
+      padding-top: 5px;
+      border-top: 1.5px solid #333 !important;
+    }
+    .notes {
+      font-size: 8pt;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .sign {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 14px;
+      font-size: 9pt;
+    }
+    .sign .line {
+      margin-top: 28px;
+      border-top: 1px solid #999;
+      padding-top: 3px;
+      color: #666;
+      font-size: 7.5pt;
+    }
+    .footer {
+      margin-top: 12px;
+      padding-top: 6px;
+      border-top: 1px solid #ddd;
+      font-size: 7pt;
+      color: #777;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="letterhead">
+    <div>
+      <p class="brand-name">UKSTAV SLOVAKIA s. r. o.</p>
+      <div class="brand-tag">Stavebné práce a rekonštrukcie · Bratislava</div>
+    </div>
+    <div class="contacts">
+      <strong>+421 950 405 659</strong><br />
+      ukstav.sk@gmail.com · www.ukstav.sk<br />
+      Obchodná 559/37, 811 06 Bratislava – Staré Mesto<br />
+      IČO 57 177 945 · DIČ 2122 589 9974
+    </div>
+  </div>
+
+  <div class="badge">Cenová ponuka</div>
+  <h1>Maliarske a stierkovacie práce — 4 izby</h1>
+  <div class="sub">
+    Číslo: UKSTAV-2026-160909 · Dátum: 3. 11. 2026 · Platnosť: 30 dní · Ceny v EUR vrátane DPH 23 %
+  </div>
+
+  <div class="meta">
+    <div><span>Objekt / lokalita</span>Bratislava, Bratislavský kraj</div>
+    <div><span>Zákazník / dopyt</span>Marek M. · projekt ID 160909</div>
+    <div><span>Plocha</span>Steny 157 m² · Stropy 63 m² · Spolu 220 m²</div>
+    <div><span>Termín</span>do 1 mesiaca od potvrdenia</div>
+  </div>
+
+  <!-- HLAVNÉ: €/m² s materiálom / bez materiálu -->
+  <div class="m2-grid">
+    <div class="m2-box">
+      <div class="label">Bez materiálu · iba práca</div>
+      <p class="price">46,19 €</p>
+      <div class="unit">/ m² · vrátane DPH 23 %</div>
+      <div class="total">
+        220 m² × 46,19 € = <strong>10 161,03 €</strong><br />
+        <span style="color:#666">(bez DPH: 37,55 €/m² · 8 261,00 €)</span>
+      </div>
+    </div>
+    <div class="m2-box rec">
+      <div class="rec-tag">ODPORÚČANÉ</div>
+      <div class="label">S materiálom · práca + materiál</div>
+      <p class="price">56,14 €</p>
+      <div class="unit">/ m² · vrátane DPH 23 %</div>
+      <div class="total">
+        220 m² × 56,14 € = <strong>12 350,43 €</strong><br />
+        <span style="color:#666">(bez DPH: 45,64 €/m² · 10 041,00 €)</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Rozpad položiek (práce a materiál zvlášť, bez DPH)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th class="ctr" style="width:26px">№</th>
+        <th>Pozícia</th>
+        <th class="ctr" style="width:34px">J.</th>
+        <th class="num" style="width:48px">Množ.</th>
+        <th class="num" style="width:54px">Jedn. práca</th>
+        <th class="num" style="width:58px">Práce</th>
+        <th class="num" style="width:54px">Jedn. mat.</th>
+        <th class="num" style="width:58px">Materiál</th>
+        <th class="num" style="width:62px">Spolu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ctr">1</td>
+        <td>Oškrabanie starých náterov — steny</td>
+        <td class="ctr">m²</td>
+        <td class="num">157</td>
+        <td class="num">4,50</td>
+        <td class="num">706,50</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">706,50</td>
+      </tr>
+      <tr>
+        <td class="ctr">2</td>
+        <td>Oškrabanie starých náterov — stropy</td>
+        <td class="ctr">m²</td>
+        <td class="num">63</td>
+        <td class="num">5,50</td>
+        <td class="num">346,50</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">346,50</td>
+      </tr>
+      <tr>
+        <td class="ctr">3</td>
+        <td>Lokálne vyspravenie omietok po oškrabaní</td>
+        <td class="ctr">m²</td>
+        <td class="num">20</td>
+        <td class="num">16,00</td>
+        <td class="num">320,00</td>
+        <td class="num">2,50</td>
+        <td class="num">50,00</td>
+        <td class="num">370,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">4</td>
+        <td>Penetrácia podkladu 2× — steny a stropy</td>
+        <td class="ctr">m²</td>
+        <td class="num">220</td>
+        <td class="num">2,80</td>
+        <td class="num">616,00</td>
+        <td class="num">0,55</td>
+        <td class="num">121,00</td>
+        <td class="num">737,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">5</td>
+        <td>Sieťkovanie + stierka (gletovanie) — steny</td>
+        <td class="ctr">m²</td>
+        <td class="num">157</td>
+        <td class="num">16,00</td>
+        <td class="num">2 512,00</td>
+        <td class="num">3,40</td>
+        <td class="num">533,80</td>
+        <td class="num">3 045,80</td>
+      </tr>
+      <tr>
+        <td class="ctr">6</td>
+        <td>Sieťkovanie + stierka (gletovanie) — stropy</td>
+        <td class="ctr">m²</td>
+        <td class="num">63</td>
+        <td class="num">20,00</td>
+        <td class="num">1 260,00</td>
+        <td class="num">3,40</td>
+        <td class="num">214,20</td>
+        <td class="num">1 474,20</td>
+      </tr>
+      <tr>
+        <td class="ctr">7</td>
+        <td>Osadenie rohových líšt</td>
+        <td class="ctr">bm</td>
+        <td class="num">40</td>
+        <td class="num">5,50</td>
+        <td class="num">220,00</td>
+        <td class="num">1,60</td>
+        <td class="num">64,00</td>
+        <td class="num">284,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">8</td>
+        <td>Vyspravenie špaliet okien a dverí</td>
+        <td class="ctr">bm</td>
+        <td class="num">45</td>
+        <td class="num">14,00</td>
+        <td class="num">630,00</td>
+        <td class="num">2,00</td>
+        <td class="num">90,00</td>
+        <td class="num">720,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">9</td>
+        <td>Finálne prebrúsenie stierky</td>
+        <td class="ctr">m²</td>
+        <td class="num">220</td>
+        <td class="num">3,00</td>
+        <td class="num">660,00</td>
+        <td class="num">0,25</td>
+        <td class="num">55,00</td>
+        <td class="num">715,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">10</td>
+        <td>Maľba biela 2× — steny a stropy</td>
+        <td class="ctr">m²</td>
+        <td class="num">220</td>
+        <td class="num">4,50</td>
+        <td class="num">990,00</td>
+        <td class="num">1,60</td>
+        <td class="num">352,00</td>
+        <td class="num">1 342,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">11</td>
+        <td>Spotrebný materiál (brúsivo, pásky, fólie…)</td>
+        <td class="ctr">komp.</td>
+        <td class="num">1</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">120,00</td>
+        <td class="num">120,00</td>
+      </tr>
+      <tr>
+        <td class="ctr">12</td>
+        <td>Doprava / presun materiálu na objekt</td>
+        <td class="ctr">komp.</td>
+        <td class="num">1</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">180,00</td>
+        <td class="num">180,00</td>
+      </tr>
+      <tr class="total">
+        <td colspan="5">SPOLU bez DPH</td>
+        <td class="num">8 261,00</td>
+        <td></td>
+        <td class="num">1 780,00</td>
+        <td class="num">10 041,00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="rekap">
+    <table>
+      <tr>
+        <td>A — Bez materiálu · €/m² s DPH</td>
+        <td class="num"><strong>46,19 €/m²</strong></td>
+      </tr>
+      <tr>
+        <td>A — Celkom s DPH (220 m²)</td>
+        <td class="num">10 161,03 €</td>
+      </tr>
+      <tr><td colspan="2" style="height:6px"></td></tr>
+      <tr>
+        <td>B — S materiálom · €/m² s DPH</td>
+        <td class="num"><strong>56,14 €/m²</strong></td>
+      </tr>
+      <tr class="big">
+        <td>B — Celkom s DPH (220 m²)</td>
+        <td class="num">12 350,43 €</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="notes">
+    <strong>Poznámky:</strong>
+    Jednotkové ceny prác sú bez materiálu; materiál je uvedený samostatne.
+    Gletovanie a brúsenie sú zahrnuté (pol. 5, 6, 9).
+    Zakrývanie nábytku/podlahy nie je v cene (klient uviedol, že nie je potrebné).
+    Odvoz sute po oškrabaní nie je v cene — doplníme po obhliadke.
+    Ponuka je orientačná; finálna cena po obhliadke. Platnosť 30 dní.
+    UKSTAV SLOVAKIA s. r. o. je platca DPH — fakturácia prác aj materiálu.
+  </div>
+
+  <div class="sign">
+    <div>
+      <strong>Za UKSTAV SLOVAKIA s. r. o.</strong><br />
+      Anatolij Porokhnavets · konateľ<br />
+      +421 950 405 659
+      <div class="line">podpis / pečiatka</div>
+    </div>
+    <div>
+      <strong>Zákazník</strong><br />
+      Marek M.
+      <div class="line">meno / podpis</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>UKSTAV SLOVAKIA s. r. o. · Obchodná 559/37, 811 06 Bratislava · IČO 57 177 945 · DIČ 2122 589 9974 · www.ukstav.sk</span>
+    <span>Anatolij +421 950 405 659 · Mihajlo +421 951 827 835</span>
+  </div>
+</body>
+</html>
