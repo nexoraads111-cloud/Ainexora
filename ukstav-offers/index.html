@@ -1,160 +1,100 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Vizualizácia NP 48 m² — UKSTAV</title>
+  <title>Візуалізація NP 48 m² — UKSTAV R4</title>
   <style>
-    :root {
-      --bg: #f3f4f6;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #ef4444;
-    }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f3f4f6;
+      color: #111827;
       line-height: 1.4;
     }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: #111827;
-      color: #fff;
+      position: sticky; top: 0; z-index: 10;
+      background: #111827; color: #fff;
       padding: 14px 16px 12px;
     }
-    header .brand {
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      font-size: 15px;
-    }
-    header h1 {
-      margin: 4px 0 0;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.25;
-    }
-    header p {
-      margin: 4px 0 0;
-      color: #d1d5db;
-      font-size: 13px;
-    }
+    header .brand { font-weight: 800; font-size: 15px; }
+    header h1 { margin: 4px 0 0; font-size: 18px; }
+    header p { margin: 4px 0 0; color: #d1d5db; font-size: 13px; }
     .note {
-      margin: 12px 16px;
-      padding: 10px 12px;
-      background: #fffbeb;
-      border-left: 4px solid #f59e0b;
-      border-radius: 0 8px 8px 0;
-      font-size: 13px;
-      color: #92400e;
+      margin: 12px 16px; padding: 10px 12px;
+      background: #fffbeb; border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0; font-size: 13px; color: #92400e;
     }
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      padding: 0 12px 28px;
+    h2 {
+      margin: 8px 16px 6px; font-size: 14px; color: #374151;
+      text-transform: uppercase; letter-spacing: 0.04em;
     }
+    .list { display: flex; flex-direction: column; gap: 14px; padding: 0 12px 20px; }
     a.card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
+      display: block; text-decoration: none; color: inherit;
+      background: #fff; border-radius: 12px; overflow: hidden;
       border: 1px solid #e5e7eb;
     }
-    a.card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      background: #e5e7eb;
-    }
-    a.card .cap {
-      padding: 10px 12px 12px;
-    }
-    a.card .cap strong {
-      display: block;
-      font-size: 15px;
-      margin-bottom: 2px;
-    }
-    a.card .cap span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .hint {
-      text-align: center;
-      color: var(--muted);
-      font-size: 12px;
-      padding: 0 16px 24px;
-    }
-    footer {
-      padding: 12px 16px 28px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
+    a.card img { display: block; width: 100%; height: auto; background: #e5e7eb; }
+    a.card .cap { padding: 10px 12px 12px; }
+    a.card .cap strong { display: block; font-size: 15px; margin-bottom: 2px; }
+    a.card .cap span { color: #6b7280; font-size: 13px; }
+    footer { padding: 8px 16px 28px; color: #6b7280; font-size: 12px; text-align: center; }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">UKSTAV SLOVAKIA</div>
-    <h1>Vizualizácia po rekonštrukcii</h1>
-    <p>Nebytový priestor 48 m² · Bratislava · stredná trieda</p>
+    <h1>Візуалізація після ремонту · R4</h1>
+    <p>48 m² · плитка 60×60 · без душової кабіни · котел + радіатор</p>
   </header>
 
   <div class="note">
-    Orientačné vizualizácie. Ťuknite na obrázok pre zväčšenie.
-    Kuchynská linka je návrh — nie je v položkovom rozpočte.
+    Орієнтовні візуалізації. Натисни фото для збільшення.
+    Газова труба залишається. Душова кабіна прибрана. Туалет окремо з дверима.
   </div>
 
+  <h2>1 кімната</h2>
   <div class="list">
-    <a class="card" href="vizualizacie/viz-izba1-po-remonte.jpg" target="_blank" rel="noopener">
-      <img src="vizualizacie/viz-izba1-po-remonte.jpg" alt="Izba 1 po rekonštrukcii" loading="eager" />
-      <div class="cap">
-        <strong>1. Izba pri vchode</strong>
-        <span>Svetlá podlaha, nové okná, čisté steny</span>
-      </div>
+    <a class="card" href="vizualizacie/viz-r3-izba1-a.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-izba1-a.jpg" alt="Кімната 1" loading="eager" />
+      <div class="cap"><strong>1A. Кімната 1</strong><span>Плитка 60×60 · котел · радіатор · газова труба</span></div>
     </a>
-
-    <a class="card" href="vizualizacie/viz-vchod-izba1-po-remonte.jpg" target="_blank" rel="noopener">
-      <img src="vizualizacie/viz-vchod-izba1-po-remonte.jpg" alt="Vchod po rekonštrukcii" loading="lazy" />
-      <div class="cap">
-        <strong>2. Pohľad na vchod</strong>
-        <span>Sklenené dvere, radiátor, rovnaká podlaha</span>
-      </div>
-    </a>
-
-    <a class="card" href="vizualizacie/viz-izba2-po-remonte.jpg" target="_blank" rel="noopener">
-      <img src="vizualizacie/viz-izba2-po-remonte.jpg" alt="Izba 2 po rekonštrukcii" loading="lazy" />
-      <div class="cap">
-        <strong>3. Druhá izba</strong>
-        <span>Bez starého nábytku, nové dvere a osvetlenie</span>
-      </div>
-    </a>
-
-    <a class="card" href="vizualizacie/viz-kuchyna-po-remonte.jpg" target="_blank" rel="noopener">
-      <img src="vizualizacie/viz-kuchyna-po-remonte.jpg" alt="Kuchyňa po rekonštrukcii" loading="lazy" />
-      <div class="cap">
-        <strong>4. Kuchyňa (návrh)</strong>
-        <span>Sanácia + kompaktná linka ako vizuálny návrh</span>
-      </div>
-    </a>
-
-    <a class="card" href="vizualizacie/viz-mokry-trakt-po-remonte.jpg" target="_blank" rel="noopener">
-      <img src="vizualizacie/viz-mokry-trakt-po-remonte.jpg" alt="WC a sprcha po rekonštrukcii" loading="lazy" />
-      <div class="cap">
-        <strong>5. WC + sprcha</strong>
-        <span>Nový mokrý trakt namiesto improvizácie</span>
-      </div>
+    <a class="card" href="vizualizacie/viz-r3-izba1-b-vchod.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-izba1-b-vchod.jpg" alt="Кімната 1 вхід" loading="lazy" />
+      <div class="cap"><strong>1B. Вид на вхід</strong><span>Скляні двері · плитка 60×60</span></div>
     </a>
   </div>
 
-  <p class="hint">Ak sa obrázok neotvorí v chate — otvorte túto stránku v Safari / Chrome.</p>
+  <h2>2 кімната</h2>
+  <div class="list">
+    <a class="card" href="vizualizacie/viz-r3-izba2-a.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-izba2-a.jpg" alt="Кімната 2 ракурс A" loading="lazy" />
+      <div class="cap"><strong>2A. Кімната 2</strong><span>Плитка 60×60 · вікно · двері</span></div>
+    </a>
+    <a class="card" href="vizualizacie/viz-r3-izba2-b.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-izba2-b.jpg" alt="Кімната 2 ракурс B" loading="lazy" />
+      <div class="cap"><strong>2B. Кімната 2 · другий ракурс</strong><span>Порожня кімната після ремонту</span></div>
+    </a>
+  </div>
+
+  <h2>Кухня + WC</h2>
+  <div class="list">
+    <a class="card" href="vizualizacie/viz-r3-kuchyna-a.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-kuchyna-a.jpg" alt="Кухня A" loading="lazy" />
+      <div class="cap"><strong>3A. Кухня</strong><span>Без душової · плитка 60×60 · двері в WC</span></div>
+    </a>
+    <a class="card" href="vizualizacie/viz-r3-kuchyna-b.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-kuchyna-b.jpg" alt="Кухня B" loading="lazy" />
+      <div class="cap"><strong>3B. Кухня · другий ракурс</strong><span>Душ прибрано · місце під техніку</span></div>
+    </a>
+    <a class="card" href="vizualizacie/viz-r3-kuchyna-c-wc.jpg" target="_blank" rel="noopener">
+      <img src="vizualizacie/viz-r3-kuchyna-c-wc.jpg" alt="WC окремо" loading="lazy" />
+      <div class="cap"><strong>3C. Туалет окремо</strong><span>Окрема кімната з дверима</span></div>
+    </a>
+  </div>
+
   <footer>UKSTAV · +421 950 405 659 · ukstav.sk</footer>
 </body>
 </html>
