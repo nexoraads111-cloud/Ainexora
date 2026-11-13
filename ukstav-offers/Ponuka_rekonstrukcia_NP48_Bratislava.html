@@ -55,11 +55,11 @@
       font-size: 8.5pt;
     }
     .note strong { color: #92400e; }
-    .note.danger {
-      border-left-color: #ef4444;
-      background: #fef2f2;
+    .note.info {
+      border-left-color: #2563eb;
+      background: #eff6ff;
     }
-    .note.danger strong { color: #991b1b; }
+    .note.info strong { color: #1e40af; }
     .prices {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -156,45 +156,75 @@
     </div>
   </header>
 
-  <div class="doc-label">Orientačná cenová ponuka · revízia po fotografiách kuchyne</div>
+  <div class="doc-label">Orientačná cenová ponuka · R3 po fotografiách izieb</div>
   <div class="doc-title">Rekonštrukcia nebytového priestoru — 48 m², Bratislava</div>
-  <p class="muted">Číslo: UKSTAV-2026-1112-NP48-R2 · Dátum: 12. 11. 2026 · Platnosť: 30 dní · pôdorys NP č. NO 11 + fotografie mokrej zóny</p>
+  <p class="muted">Číslo: UKSTAV-2026-1112-NP48-R3 · Dátum: 13. 11. 2026 · Platnosť: 30 dní · pôdorys + fotky kuchyne + 2 izieb</p>
 
   <div class="meta-grid">
     <div><span>Objekt</span><br /><strong>Nebytový priestor · bytový dom · Bratislava</strong></div>
     <div><span>Plocha / termín</span><br /><strong>48 m² · požadovaný termín do 1 mesiaca</strong></div>
-    <div><span>Rozsah podľa dopytu</span><br /><strong>Podlahy, steny (pleseň), okná, dvere, vchod</strong></div>
-    <div><span>Stav kuchyne / WC / sprchy</span><br /><strong>Ťažký — omietky, vlhkosť, improvizovaná sprcha</strong></div>
+    <div><span>Izba 1 (pri exteriéri)</span><br /><strong>Stredný stav · čiastočne rozpracovaná</strong></div>
+    <div><span>Izba 2</span><br /><strong>Stredný stav · nábytok / dlažba / lokálne omietky</strong></div>
   </div>
 
-  <div class="note danger">
-    <strong>Aktualizácia podľa fotografií:</strong> Kuchyňa, WC a sprcha sú v ťažkom stave (opadávajúca omietka, vlhkosť, voľné káble, staré obklady, improvizovaná sprcha, silné zanesenie).
-    Do ponuky sme doplnili vypratanie, hĺbkovú sanáciu, demontáž obkladov, ťažší mokrý trakt a orientačné bezpečné elektro v kuchyni.
-    Fotografie izieb zatiaľ nemáme — ich stav môže ešte upraviť cenu. Termín <strong>do 1 mesiaca</strong> je pri tomto stave nereálny bez skráteného rozsahu.
+  <div class="note info">
+    <strong>Aktualizácia R3 podľa fotiek izieb:</strong>
+    Izby sú v <strong>strednom stave</strong> (výrazne lepšie ako kuchyňa/WC/sprcha).
+    Izba pri vchode: čiastočne vyprataná, červené krytie podlahy, voľné káble, radiátor demontovaný, okná/vchod na výmenu alebo úpravu.
+    Druhá izba: dlažba, skrine/matrace na vypratanie, lokálne poškodenie omietky pri podlahe, staré svietidlá.
+    Hĺbková sanácia ostáva viazaná hlavne na mokrý trakt. Do ceny doplnené vypratanie 2. izby a spätná montáž radiátorov.
   </div>
 
   <div class="prices">
     <div class="price-box">
       <div class="kind">Iba práca</div>
-      <div class="big">362 €</div>
+      <div class="big">378 €</div>
       <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
       <div class="sum">
         <span>Súčet za 48 m²</span>
-        17 361 €
+        18 149 €
       </div>
     </div>
     <div class="price-box">
       <div class="kind">Práca + materiál · stredná trieda</div>
-      <div class="big">615 €</div>
+      <div class="big">633 €</div>
       <div class="per">za 1 m² podlahy (s DPH 23 %)</div>
       <div class="sum">
         <span>Súčet za 48 m²</span>
-        29 514 €
+        30 399 €
       </div>
     </div>
   </div>
 
-  <h2>1. Položkový rozpočet (práca + materiál, bez DPH)</h2>
+  <h2>1. Stav podľa fotografií</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Zóna</th>
+        <th>Stav</th>
+        <th>Dopad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kuchyňa + WC + sprcha</td>
+        <td>Ťažký (omietky, vlhkosť, obklady, voľné káble)</td>
+        <td>Hĺbková sanácia + nový mokrý trakt</td>
+      </tr>
+      <tr>
+        <td>Izba 1 (vchod / exteriér)</td>
+        <td>Stredný · rozpracovaná</td>
+        <td>Štandardný cyklus stien, podlaha, vchod/okná, radiátory</td>
+      </tr>
+      <tr>
+        <td>Izba 2</td>
+        <td>Stredný · obývaná / zariadená</td>
+        <td>Vypratanie, demontáž dlažby, lokálne omietky + maľba</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>2. Položkový rozpočet (práca + materiál, bez DPH)</h2>
   <table>
     <thead>
       <tr>
@@ -219,7 +249,16 @@
       </tr>
       <tr>
         <td class="center">2</td>
-        <td>Sanácia plesne + hĺbkové odstránenie omietky (ťažký stav)</td>
+        <td>Vypratanie 2. izby (skrine, matrace, drobný inventár)</td>
+        <td class="center">komp.</td>
+        <td class="num">1</td>
+        <td class="num">400 €</td>
+        <td class="num">—</td>
+        <td class="num">400 €</td>
+      </tr>
+      <tr>
+        <td class="center">3</td>
+        <td>Sanácia plesne + hĺbkové odstránenie omietky (mokrý trakt)</td>
         <td class="center">m²</td>
         <td class="num">55</td>
         <td class="num">770 €</td>
@@ -227,7 +266,7 @@
         <td class="num">1 210 €</td>
       </tr>
       <tr>
-        <td class="center">3</td>
+        <td class="center">4</td>
         <td>Demontáž starých obkladov (WC, sprcha, umývadlo)</td>
         <td class="center">m²</td>
         <td class="num">15</td>
@@ -236,7 +275,7 @@
         <td class="num">210 €</td>
       </tr>
       <tr>
-        <td class="center">4</td>
+        <td class="center">5</td>
         <td>Steny — kompletný cyklus (penetrácia, sieťka, stierky, 2× maľba)</td>
         <td class="center">m²</td>
         <td class="num">144</td>
@@ -245,7 +284,7 @@
         <td class="num">4 961 €</td>
       </tr>
       <tr>
-        <td class="center">5</td>
+        <td class="center">6</td>
         <td>Stropy — kompletný cyklus</td>
         <td class="center">m²</td>
         <td class="num">48</td>
@@ -254,7 +293,7 @@
         <td class="num">1 881 €</td>
       </tr>
       <tr>
-        <td class="center">6</td>
+        <td class="center">7</td>
         <td>Rohové a APU lišty</td>
         <td class="center">bm</td>
         <td class="num">47</td>
@@ -263,7 +302,7 @@
         <td class="num">409 €</td>
       </tr>
       <tr>
-        <td class="center">7</td>
+        <td class="center">8</td>
         <td>Demontáž starej podlahovej krytiny / dlažby</td>
         <td class="center">m²</td>
         <td class="num">48</td>
@@ -272,7 +311,7 @@
         <td class="num">768 €</td>
       </tr>
       <tr>
-        <td class="center">8</td>
+        <td class="center">9</td>
         <td>Nivelácia / príprava podkladu</td>
         <td class="center">m²</td>
         <td class="num">48</td>
@@ -281,7 +320,7 @@
         <td class="num">1 248 €</td>
       </tr>
       <tr>
-        <td class="center">9</td>
+        <td class="center">10</td>
         <td>Pokládka vinyl / plávajúca podlaha (stredná trieda)</td>
         <td class="center">m²</td>
         <td class="num">48</td>
@@ -290,7 +329,7 @@
         <td class="num">2 784 €</td>
       </tr>
       <tr>
-        <td class="center">10</td>
+        <td class="center">11</td>
         <td>Soklové lišty</td>
         <td class="center">bm</td>
         <td class="num">55</td>
@@ -299,8 +338,8 @@
         <td class="num">550 €</td>
       </tr>
       <tr>
-        <td class="center">11</td>
-        <td>Výmena okien PVC stredná trieda (2 izbové + 1 malé) + montáž</td>
+        <td class="center">12</td>
+        <td>Výmena okien PVC mid (2 izbové + 1 malé) + montáž</td>
         <td class="center">ks</td>
         <td class="num">3</td>
         <td class="num">450 €</td>
@@ -308,7 +347,7 @@
         <td class="num">1 650 €</td>
       </tr>
       <tr>
-        <td class="center">12</td>
+        <td class="center">13</td>
         <td>Špalety po výmene okien</td>
         <td class="center">bm</td>
         <td class="num">12</td>
@@ -317,8 +356,8 @@
         <td class="num">288 €</td>
       </tr>
       <tr>
-        <td class="center">13</td>
-        <td>Interiérové dvere stredná trieda + osadenie</td>
+        <td class="center">14</td>
+        <td>Interiérové dvere mid + osadenie</td>
         <td class="center">ks</td>
         <td class="num">5</td>
         <td class="num">400 €</td>
@@ -326,8 +365,8 @@
         <td class="num">1 300 €</td>
       </tr>
       <tr>
-        <td class="center">14</td>
-        <td>Vchodové dvojkrídlové dvere + osadenie</td>
+        <td class="center">15</td>
+        <td>Vchodové dvojkrídlové / sklenené dvere + osadenie</td>
         <td class="center">ks</td>
         <td class="num">1</td>
         <td class="num">280 €</td>
@@ -335,7 +374,7 @@
         <td class="num">1 230 €</td>
       </tr>
       <tr>
-        <td class="center">15</td>
+        <td class="center">16</td>
         <td>WC + sprcha — hydroizolácia a nový obklad (ťažký stav)</td>
         <td class="center">m²</td>
         <td class="num">18</td>
@@ -344,7 +383,7 @@
         <td class="num">1 656 €</td>
       </tr>
       <tr>
-        <td class="center">16</td>
+        <td class="center">17</td>
         <td>Demontáž / montáž sanitár + výmena umývadla mid</td>
         <td class="center">komp.</td>
         <td class="num">1</td>
@@ -353,7 +392,16 @@
         <td class="num">600 €</td>
       </tr>
       <tr>
-        <td class="center">17</td>
+        <td class="center">18</td>
+        <td>Spätná montáž radiátorov (izba 1)</td>
+        <td class="center">ks</td>
+        <td class="num">2</td>
+        <td class="num">240 €</td>
+        <td class="num">80 €</td>
+        <td class="num">320 €</td>
+      </tr>
+      <tr>
+        <td class="center">19</td>
         <td>Orientačné bezpečné elektro / rozvod kuchyňa (provizórne)</td>
         <td class="center">komp.</td>
         <td class="num">1</td>
@@ -362,7 +410,7 @@
         <td class="num">1 200 €</td>
       </tr>
       <tr>
-        <td class="center">18</td>
+        <td class="center">20</td>
         <td>Ochrana spoločných priestorov + upratovanie</td>
         <td class="center">komp.</td>
         <td class="num">1</td>
@@ -371,7 +419,7 @@
         <td class="num">420 €</td>
       </tr>
       <tr>
-        <td class="center">19</td>
+        <td class="center">21</td>
         <td>Kontajner + odvoz sutiny</td>
         <td class="center">komp.</td>
         <td class="num">1</td>
@@ -380,7 +428,7 @@
         <td class="num">850 €</td>
       </tr>
       <tr>
-        <td class="center">20</td>
+        <td class="center">22</td>
         <td>Zariadenie staveniska / náradie</td>
         <td class="center">komp.</td>
         <td class="num">1</td>
@@ -394,40 +442,31 @@
   <table class="totals">
     <tr>
       <td>Práce bez DPH</td>
-      <td class="num">14 115 €</td>
+      <td class="num">14 755 €</td>
     </tr>
     <tr>
       <td>Materiál bez DPH</td>
-      <td class="num">9 880 €</td>
+      <td class="num">9 960 €</td>
     </tr>
     <tr>
       <td>Spolu bez DPH</td>
-      <td class="num">23 995 €</td>
+      <td class="num">24 715 €</td>
     </tr>
     <tr>
       <td>DPH 23 %</td>
-      <td class="num">5 519 €</td>
+      <td class="num">5 684 €</td>
     </tr>
     <tr class="grand">
       <td>Spolu s DPH 23 %</td>
-      <td class="num">29 514 €</td>
+      <td class="num">30 399 €</td>
     </tr>
   </table>
 
-  <h2>2. Čo je / nie je v cene</h2>
+  <h2>3. Čo je / nie je v cene</h2>
   <ul class="compact">
-    <li><strong>V cene:</strong> vypratanie kuchyne, hĺbková sanácia, demontáž obkladov, steny+stropy, podlaha mid, okná/dvere/vchod, ťažší WC/sprcha, umývadlo mid, orientačné bezpečné elektro kuchyne, odvoz.</li>
-    <li><strong>Nie je v cene:</strong> kompletná nová elektroinštalácia celého NP, nové rozvody vody/kúrenia, kuchynská linka, sporák, nové WC/sprchový set (nad mid), projektová dokumentácia, búracie práce priečok.</li>
-    <li><strong>Bez položky elektro:</strong> orientačne <strong>28 038 € s DPH</strong>.</li>
-    <li><strong>Odporúčaná rezerva +15 %</strong> pre skrytú vlhkosť / izby bez fotiek: <strong>33 941 € s DPH</strong>.</li>
-  </ul>
-
-  <h2>3. Ďalší krok</h2>
-  <ul class="compact">
-    <li>Dohodnúť osobnú obhliadku (najmä vlhkosť, stropy, izby, prístup)</li>
-    <li>Overiť, či s.v. 1,97 je len prestup</li>
-    <li>Upraviť rozsah podľa termínu (plný vs. skrátený)</li>
-    <li>Po obhliadke vystavíme fixnú ponuku</li>
+    <li><strong>V cene:</strong> vypratanie kuchyne + 2. izby, hĺbková sanácia mokrého traktu, steny+stropy, podlaha mid, okná/dvere/vchod, ťažší WC/sprcha, umývadlo mid, radiátory, orientačné bezpečné elektro kuchyne, odvoz.</li>
+    <li><strong>Nie je v cene:</strong> kompletná nová elektroinštalácia celého NP + nové svietidlá, nové rozvody vody/kúrenia, kuchynská linka, projekt, búracie práce priečok.</li>
+    <li><strong>Odporúčaná rezerva +10 %</strong> (obhliadka / skrytá vlhkosť): <strong>33 439 € s DPH</strong>.</li>
   </ul>
 
   <div class="sign">
@@ -445,7 +484,7 @@
   </div>
 
   <div class="footer">
-    <div>UKSTAV-2026-1112-NP48-R2 · revízia po fotkách kuchyne · platnosť 30 dní</div>
+    <div>UKSTAV-2026-1112-NP48-R3 · po fotkách izieb · platnosť 30 dní</div>
     <div>Strana 1</div>
   </div>
 </body>
