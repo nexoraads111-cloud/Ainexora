@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cenová ponuka — maľovanie schodiska | UKSTAV SLOVAKIA</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      color: #111827;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+    .letterhead {
+      display: grid;
+      grid-template-columns: 68px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 4px solid #ef4444;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .letterhead img { width: 68px; height: 68px; object-fit: contain; }
+    .letterhead .name { margin: 0; font-size: 16pt; font-weight: 800; letter-spacing: 0.03em; }
+    .letterhead .tag { margin: 2px 0 0; font-size: 9pt; color: #6b7280; }
+    .contacts { text-align: right; font-size: 8.5pt; color: #374151; line-height: 1.4; }
+    .contacts strong { color: #111827; font-size: 9.5pt; }
+
+    .doc-label {
+      display: inline-block;
+      background: #ef4444; color: #fff;
+      font-size: 7.5pt; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 3px 9px; margin-bottom: 6px;
+    }
+    h1 { margin: 0 0 3px; font-size: 14.5pt; font-weight: 800; }
+    .sub { margin: 0 0 10px; color: #6b7280; font-size: 8.5pt; }
+
+    .info {
+      display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+      border: 2px solid #111827; margin-bottom: 10px;
+    }
+    .info .cell { padding: 8px 10px; border-right: 1px solid #e5e7eb; }
+    .info .cell:last-child { border-right: none; background: #111827; color: #fff; }
+    .info .k {
+      font-size: 7pt; text-transform: uppercase; letter-spacing: 0.05em;
+      color: #6b7280; font-weight: 700;
+    }
+    .info .cell:last-child .k { color: #fca5a5; }
+    .info .v { font-size: 11pt; font-weight: 800; margin-top: 2px; }
+    .info .cell:last-child .v { font-size: 14pt; }
+    .info .h { font-size: 8pt; margin-top: 2px; opacity: 0.85; }
+
+    .lead {
+      background: #f9fafb; border-left: 4px solid #ef4444;
+      padding: 7px 10px; margin-bottom: 12px; font-size: 9pt;
+    }
+
+    .tier {
+      border: 2px solid #111827;
+      margin-bottom: 10px;
+      page-break-inside: avoid;
+    }
+    .tier-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 10px; background: #111827; color: #fff;
+    }
+    .tier.b .tier-head { background: #ef4444; }
+    .tier-head h2 { margin: 0; font-size: 11.5pt; font-weight: 800; }
+    .tier-head .sum { font-size: 14pt; font-weight: 800; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+    th, td { border: 1px solid #e5e7eb; padding: 5px 6px; vertical-align: top; }
+    th { background: #f3f4f6; text-align: left; font-size: 8pt; }
+    td.num, th.num { text-align: right; white-space: nowrap; }
+    tr.total td { background: #111827; color: #fff; font-weight: 800; }
+    .tier.b tr.total td { background: #991b1b; }
+
+    .note { font-size: 8pt; color: #6b7280; margin-top: 8px; }
+    .next {
+      margin-top: 10px; background: #111827; color: #fff;
+      padding: 8px 10px; font-size: 9pt;
+    }
+    .next strong { color: #fca5a5; }
+    .footer {
+      margin-top: 12px; padding-top: 7px; border-top: 1px solid #e5e7eb;
+      display: flex; justify-content: space-between; font-size: 7.5pt; color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="letterhead">
+    <img src="logo2.png" alt="UKSTAV" />
+    <div>
+      <p class="name">UKSTAV SLOVAKIA s. r. o.</p>
+      <p class="tag">Stavebné práce · maľovanie · rekonštrukcie · Bratislava</p>
+    </div>
+    <div class="contacts">
+      <strong>+421 950 405 659</strong><br />
+      ukstav.sk@gmail.com · www.ukstav.sk<br />
+      Obchodná 559/37, 811 06 Bratislava<br />
+      IČO 57 177 945 · DIČ 21225899974
+    </div>
+  </header>
+
+  <div class="doc-label">Cenová ponuka</div>
+  <h1>Maľovanie schodiska / vchodu — 3-poschodový bytový dom</h1>
+  <p class="sub">Č. UKSTAV-2026-1029-SCH · 29. 10. 2026 · podľa obhliadky · sumy vrátane DPH 23 %</p>
+
+  <div class="info">
+    <div class="cell">
+      <div class="k">Objekt</div>
+      <div class="v">Schodisko / vchod</div>
+      <div class="h">3 poschodia · bytový dom</div>
+    </div>
+    <div class="cell">
+      <div class="k">Spôsob maľovania</div>
+      <div class="v">Sokel 1,5 m + steny</div>
+      <div class="h">Umývateľná do 1,5 m · vyššie bežná</div>
+    </div>
+    <div class="cell">
+      <div class="k">Množstvá</div>
+      <div class="v">90 + 240 m²</div>
+      <div class="h">60 bm × 1,5 m sokel · 240 m² steny</div>
+    </div>
+  </div>
+
+  <div class="lead">
+    <strong>Ako maľujeme:</strong> od podlahy do <strong>1,5 m</strong> — umývateľná farba (sokel),
+    vyššie — bežná interiérová farba. Dĺžka sokla: <strong>60 bm</strong> → <strong>90 m²</strong>.
+    Bežná farba: <strong>240 m²</strong>. Zakrytie: práca + materiál v jednom riadku.
+  </div>
+
+  <!-- VARIANT A -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2>Variant A — 1× náter</h2>
+      <div class="sum">3 381 €</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28px">№</th>
+          <th>Položka</th>
+          <th class="num">Množ.</th>
+          <th class="num">Práce</th>
+          <th class="num">Materiál</th>
+          <th class="num">Spolu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Umývateľná farba — sokel do 1,5 m (1× náter)</td>
+          <td class="num">90 m²</td>
+          <td class="num">630 €</td>
+          <td class="num">405 €</td>
+          <td class="num">1 035 €</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bežná farba — steny nad soklom (1× náter)</td>
+          <td class="num">240 m²</td>
+          <td class="num">960 €</td>
+          <td class="num">528 €</td>
+          <td class="num">1 488 €</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Penetrácia / základ pod maľbu</td>
+          <td class="num">330 m²</td>
+          <td class="num">231 €</td>
+          <td class="num">165 €</td>
+          <td class="num">396 €</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Zakrytie po poschodiach (práca + materiál: fólia, páska)</td>
+          <td class="num">3 posch.</td>
+          <td class="num">150 €</td>
+          <td class="num">80 €</td>
+          <td class="num">230 €</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>Pretmelenie trhlín (3–4 miesta, v ponuke 4)</td>
+          <td class="num">4 miesta</td>
+          <td class="num">140 €</td>
+          <td class="num">32 €</td>
+          <td class="num">172 €</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Doprava materiálu</td>
+          <td class="num">1×</td>
+          <td class="num">—</td>
+          <td class="num">60 €</td>
+          <td class="num">60 €</td>
+        </tr>
+        <tr class="total">
+          <td></td>
+          <td>SPOLU VARIANT A · 1× náter (s DPH)</td>
+          <td class="num"></td>
+          <td class="num">2 111 €</td>
+          <td class="num">1 270 €</td>
+          <td class="num">3 381 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- VARIANT B -->
+  <section class="tier b">
+    <div class="tier-head">
+      <h2>Variant B — 2× náter</h2>
+      <div class="sum">5 485 €</div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:28px">№</th>
+          <th>Položka</th>
+          <th class="num">Množ.</th>
+          <th class="num">Práce</th>
+          <th class="num">Materiál</th>
+          <th class="num">Spolu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Umývateľná farba — sokel do 1,5 m (2× náter)</td>
+          <td class="num">90 m² × 2</td>
+          <td class="num">1 260 €</td>
+          <td class="num">729 €</td>
+          <td class="num">1 989 €</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bežná farba — steny nad soklom (2× náter)</td>
+          <td class="num">240 m² × 2</td>
+          <td class="num">1 920 €</td>
+          <td class="num">950 €</td>
+          <td class="num">2 870 €</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Penetrácia / základ (1×)</td>
+          <td class="num">330 m²</td>
+          <td class="num">231 €</td>
+          <td class="num">165 €</td>
+          <td class="num">396 €</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Zakrytie po poschodiach (práca + materiál)</td>
+          <td class="num">3 posch.</td>
+          <td class="num">150 €</td>
+          <td class="num">80 €</td>
+          <td class="num">230 €</td>
+        </tr>
+        <tr class="total">
+          <td></td>
+          <td>SPOLU VARIANT B · 2× náter (s DPH)</td>
+          <td class="num"></td>
+          <td class="num">3 561 €</td>
+          <td class="num">1 924 €</td>
+          <td class="num">5 485 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <p class="note">
+    <strong>Poznámka k variantu B:</strong> pretmelenie trhlín a doprava nie sú zahrnuté
+    (riešia sa pri prvom nátere / variante A). Zakrytie ostáva.
+    <br />
+    <strong>Nie je v cene:</strong> veľkoplošná oprava omietok, maľovanie dverí bytov, zábradlia,
+    lešenie nad rámec bežných rebríkov. Fixácia po odsúhlasení rozsahu na mieste.
+  </p>
+
+  <div class="next">
+    <strong>Ďalší krok:</strong> zákazník zvolí variant A (1×) alebo B (2×) → potvrdíme termín → realizácia.
+  </div>
+
+  <footer class="footer">
+    <div>UKSTAV SLOVAKIA s. r. o. · Obchodná 559/37, 811 06 Bratislava · IČO 57177945 · DIČ 21225899974</div>
+    <div>Anatolij Porokhnavets +421 950 405 659 · Mihajlo Kovač +421 951 827 835</div>
+  </footer>
+
+</body>
+</html>
